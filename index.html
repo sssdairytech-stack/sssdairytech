@@ -98,11 +98,18 @@
     .section-images { display: grid; gap: .8rem; margin: 1rem 0; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
     .section-images img {
       width: 100%;
-      height: 170px;
+      height: auto;
+      min-height: 170px;
       object-fit: cover;
       border-radius: 1rem;
       border: 1px solid var(--border);
       background: #0b1220;
+    }
+    .section-images img.full-image {
+      object-fit: contain;
+      min-height: 0;
+      max-height: min(70vh, 560px);
+      background: rgba(11, 18, 32, .65);
     }
     .hero-banner img { height: 280px; }
     .contact-line { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; margin: .45rem 0; }
@@ -136,6 +143,9 @@
       }
       .consultant-card { grid-template-columns: 1fr; }
       .consultant-card img { width: min(220px, 100%); }
+      .section-images { grid-template-columns: 1fr; }
+      .section-images img { min-height: 0; }
+      .hero-banner img { max-height: 220px; }
       .brand span {
         font-size: clamp(.8rem, 3.8vw, .94rem);
         max-width: 17ch;
@@ -222,7 +232,7 @@
       <h2>Dairy Plant Technical Audit Program</h2>
       <p class="lead">Gap analysis and improvement roadmap for quality, yield, and operating cost.</p>
       <div class="section-images">
-        <img src="03_technical_audit_inspection.png" alt="Dairy plant inspection in progress" loading="lazy" />
+        <img class="full-image" src="03_technical_audit_inspection.png" alt="Dairy plant inspection in progress" loading="lazy" />
       </div>
       <div class="grid cards">
         <div class="card">1. Plant process study and line-wise operational review</div>
@@ -251,7 +261,7 @@
       <details id="kra">
         <summary>Department-wise Key Result Areas</summary>
         <div class="section-images">
-          <img src="03_technical_audit_inspection.png" alt="Quality inspection in production" loading="lazy" />
+          <img class="full-image" src="03_technical_audit_inspection.png" alt="Quality inspection in production" loading="lazy" />
           <img src="08_kra_maintenance.jpeg" alt="Dairy equipment and maintenance area" loading="lazy" />
           <img src="09_kra_packing.jpeg" alt="Packing and dispatch operations" loading="lazy" />
         </div>
