@@ -36,8 +36,8 @@
     nav a:hover { color: #fff; }
     .brand { display: flex; align-items: center; gap: .7rem; color: #67e8f9; font-weight: 700; letter-spacing: .09em; }
     .brand img {
-      width: 500px;
-      height: 500px;
+      width: clamp(44px, 7vw, 72px);
+      height: clamp(44px, 7vw, 72px);
       object-fit: contain;
       border-radius: .5rem;
       background: #fff;
@@ -103,6 +103,10 @@
       .consultant-card { grid-template-columns: 1fr; }
       .consultant-card img { width: min(220px, 100%); }
       .brand span { font-size: .85rem; }
+      .brand img {
+        width: clamp(40px, 13vw, 56px);
+        height: clamp(40px, 13vw, 56px);
+      }
     }
   </style>
 </head>
