@@ -12,69 +12,47 @@
       --text: #e2e8f0;
       --muted: #94a3b8;
       --accent: #22d3ee;
-      --accent-dark: #0e7490;
+      --border: rgba(148, 163, 184, .2);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: radial-gradient(circle at top left, #164e63 0, transparent 38%),
-        radial-gradient(circle at bottom right, #1e3a8a 0, transparent 35%), var(--bg);
+      background: radial-gradient(circle at top left, #164e63 0, transparent 35%), radial-gradient(circle at bottom right, #1e3a8a 0, transparent 30%), var(--bg);
       color: var(--text);
       line-height: 1.55;
     }
-    .container { width: min(1080px, 92vw); margin: 0 auto; }
+    .container { width: min(1180px, 92vw); margin: 0 auto; }
     header {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(8px);
       background: rgba(2, 6, 23, .9);
-      border-bottom: 1px solid rgba(148, 163, 184, .2);
-      z-index: 10;
+      border-bottom: 1px solid var(--border);
     }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: .85rem 0;
-    }
-    nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
-    nav a:hover { color: white; }
-    .brand { font-weight: 700; letter-spacing: .08em; color: #67e8f9; }
-    .hero { padding: 4.5rem 0 2rem; }
-    h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; margin: 0 0 1rem; }
-    h2 { font-size: clamp(1.4rem, 3.2vw, 2.1rem); margin: 0 0 .8rem; }
+    nav { display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 0; align-items: center; }
+    nav .links { display: flex; gap: .8rem; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+    nav a:hover { color: #fff; }
+    .brand { color: #67e8f9; font-weight: 700; letter-spacing: .09em; }
+    .hero { padding: 4rem 0 2rem; display: grid; gap: 1rem; }
+    h1 { font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.15; margin: 0; }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin: 0 0 .8rem; }
+    h3 { margin: 0 0 .5rem; }
     .accent { color: var(--accent); }
-    .lead { color: var(--muted); font-size: 1.05rem; max-width: 70ch; }
+    .lead { color: var(--muted); max-width: 80ch; }
+    .pill { display: inline-block; border: 1px solid rgba(34, 211, 238, .35); color: #a5f3fc; border-radius: 999px; padding: .2rem .7rem; font-size: .82rem; }
+    section { padding: 1.3rem 0; }
     .grid { display: grid; gap: 1rem; }
-    .cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .card {
-      background: rgba(15, 23, 42, .9);
-      border: 1px solid rgba(148, 163, 184, .2);
-      border-radius: 1rem;
-      padding: 1rem;
-    }
-    section { padding: 2.2rem 0; }
-    ul { margin: .5rem 0 0; padding-left: 1rem; }
-    li { margin: .35rem 0; color: var(--muted); }
-    .kpi { font-weight: 700; font-size: 1.3rem; color: #67e8f9; }
-    .pill {
-      display: inline-block;
-      color: #a5f3fc;
-      border: 1px solid rgba(34, 211, 238, .35);
-      border-radius: 999px;
-      padding: .2rem .7rem;
-      font-size: .82rem;
-      margin-bottom: .9rem;
-    }
-    footer {
-      margin-top: 2rem;
-      border-top: 1px solid rgba(148, 163, 184, .2);
-      padding: 1.8rem 0 2.5rem;
-      color: var(--muted);
-    }
+    .cards { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .card { background: rgba(15, 23, 42, .86); border: 1px solid var(--border); border-radius: 1rem; padding: 1rem; }
+    .kpi { color: #67e8f9; font-size: 1.2rem; font-weight: 700; }
+    ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+    li { margin: .3rem 0; color: var(--muted); }
+    details { background: rgba(15,23,42,.86); border: 1px solid var(--border); border-radius: 1rem; padding: .8rem 1rem; }
+    summary { cursor: pointer; font-weight: 600; }
+    .split { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); }
+    footer { margin-top: 2rem; border-top: 1px solid var(--border); color: var(--muted); padding: 1.5rem 0 2rem; }
   </style>
 </head>
 <body>
@@ -82,11 +60,8 @@
     <div class="container">
       <nav>
         <div class="brand">SSS DAIRY TECH CONSULTANTS</div>
-        <div>
-          <a href="#services">Services</a>
-          <a href="#results">Results</a>
-          <a href="#training">Training</a>
-          <a href="#contact">Contact</a>
+        <div class="links">
+          <a href="#home">Home</a><a href="#consultant">Consultant</a><a href="#audit">Tech Audit</a><a href="#methodology">Methodology</a><a href="#kra">KRA</a><a href="#services">Services</a><a href="#results">Results</a><a href="#clients">Clients</a><a href="#training">Training</a><a href="#project">Project</a><a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
@@ -96,60 +71,146 @@
     <section class="hero" id="home">
       <span class="pill">Trusted Dairy Plant Consulting Expertise</span>
       <h1>Turning dairy plants into <span class="accent">profitable, efficient operations</span></h1>
-      <p class="lead">SSS DairyTech Consultants helps dairy plants improve production efficiency, quality systems, product yield, laboratory practices, microbial control, and profitability through practical hands-on consulting.</p>
+      <p class="lead">SSS DairyTech Consultants helps dairy plants improve production efficiency, quality systems, product yield, laboratory practices, product flavour, texture, microbial quality, and profitability through practical hands-on consulting.</p>
+      <div class="card">
+        <strong>Visible results delivered in dairy plants:</strong>
+        <ul>
+          <li>Raw milk MBRT improved from 30 minutes to 150 minutes</li>
+          <li>Pouch milk MBRT improved from 5.45 hours to 7.45 hours</li>
+          <li>Ghee grain and flavour improved through process optimisation</li>
+          <li>Curd structure and taste improvement resulted in doubling the sales</li>
+        </ul>
+      </div>
     </section>
 
     <section>
       <h2>Performance Snapshot</h2>
       <div class="grid cards">
-        <div class="card"><div class="kpi">45+</div><div>Years of industry experience</div></div>
-        <div class="card"><div class="kpi">30 → 150 min</div><div>Raw milk MBRT improvement</div></div>
-        <div class="card"><div class="kpi">5.45 → 7.45 hrs</div><div>Pouch milk MBRT improvement</div></div>
-        <div class="card"><div class="kpi">10–12%</div><div>Packing film yield improvement</div></div>
+        <div class="card"><div class="kpi">45+</div><div>Years of Industry Experience</div></div>
+        <div class="card"><div class="kpi">30 → 150 min</div><div>Raw Milk MBRT Improvement</div></div>
+        <div class="card"><div class="kpi">5.45 → 7.45 hrs</div><div>Pouch Milk MBRT Improvement</div></div>
+        <div class="card"><div class="kpi">10–12%</div><div>Pouch Yield Improvement</div></div>
+        <div class="card"><div class="kpi">Better grain & flavour</div><div>Ghee Quality Improvement</div></div>
+        <div class="card"><div class="kpi">Sales doubled</div><div>Curd Structure & Taste Improvement</div></div>
       </div>
+    </section>
+
+    <section id="consultant" class="split">
+      <div class="card">
+        <h2>About the Consultant</h2>
+        <h3>Mr. S. Somasundaram</h3>
+        <p class="lead">Senior Dairy Technologist & Industry Professional with over 45 years of experience in dairy plant operations, technical management, and consulting.</p>
+        <p class="lead">He has worked with major dairy organizations including Aavin, served as Plant Head at Heritage Foods India Ltd, and later as CEO of Vijay Dairy & Farm Products Pvt Ltd, Trichy.</p>
+      </div>
+      <div class="card">
+        <h3>Key Expertise</h3>
+        <ul>
+          <li>Dairy plant technical auditing and performance improvement</li>
+          <li>Milk procurement system improvement and MBRT strengthening</li>
+          <li>Material balance and yield optimization</li>
+          <li>Quality systems implementation and microbial contamination control</li>
+          <li>CIP system management, sanitation control, and chemical cost optimization</li>
+          <li>Energy optimization, operational cost reduction, and daily Gemba systems</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="audit">
+      <h2>Dairy Plant Technical Audit Program</h2>
+      <p class="lead">Gap analysis and improvement roadmap for quality, yield, and operating cost.</p>
+      <div class="grid cards">
+        <div class="card">1. Plant process study and line-wise operational review</div>
+        <div class="card">2. Material balance and yield gap analysis</div>
+        <div class="card">3. Quality consistency and laboratory systems evaluation</div>
+        <div class="card">4. Utility, energy, and process loss assessment</div>
+        <div class="card">5. Cost of production and efficiency review</div>
+        <div class="card">6. Department-wise KRA review and accountability mapping</div>
+        <div class="card">7. Final action plan with practical improvement roadmap</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Detailed Information</h2>
+      <details id="methodology" open>
+        <summary>Dairy Plant Improvement Methodology</summary>
+        <ul>
+          <li>Observe plant operations on the shop floor</li>
+          <li>Review daily production, quality, and dispatch reports</li>
+          <li>Conduct KRA review with department heads</li>
+          <li>Analyse deviations, losses, and quality variation</li>
+          <li>Run daily Gemba meetings for action tracking</li>
+          <li>Implement corrective actions with follow-up review</li>
+        </ul>
+      </details>
+      <details id="kra">
+        <summary>Department-wise Key Result Areas</summary>
+        <div class="grid cards">
+          <div class="card"><strong>Purchase</strong><ul><li>Vendor Selection</li><li>Cost Negotiation</li><li>Material Quality</li><li>Timely Procurement</li></ul></div>
+          <div class="card"><strong>Stores</strong><ul><li>Inventory Control</li><li>Storage Hygiene</li><li>Stock Accuracy</li><li>Issue & Receipt Discipline</li></ul></div>
+          <div class="card"><strong>Production – Milk</strong><ul><li>Cost Control</li><li>Production Efficiency</li><li>Product Quality</li><li>Employee Motivation</li></ul></div>
+          <div class="card"><strong>Maintenance</strong><ul><li>Equipment Reliability</li><li>Energy Consumption</li><li>Cost Controls</li><li>Schedules</li></ul></div>
+          <div class="card"><strong>Quality Assurance</strong><ul><li>Quality Control</li><li>Testing Efficiency</li><li>Training</li><li>Complaint Reduction</li></ul></div>
+          <div class="card"><strong>Packing & Dispatch</strong><ul><li>On-Time Dispatch</li><li>Cold Chain</li><li>Correct Quantity</li><li>Safety</li></ul></div>
+        </div>
+      </details>
+      <details id="training">
+        <summary>Training Programs for Dairy Plant Staff</summary>
+        <ul>
+          <li>Raw milk procurement improvement and MBRT improvement program</li>
+          <li>Material balancing from milk payment to milk receipt and processing</li>
+          <li>Process milk training for aroma and consistency</li>
+          <li>Good Manufacturing Practices (GMP) for dairy plants</li>
+          <li>Packing film yield improvement and loss control</li>
+          <li>Energy management in dairy plants</li>
+          <li>Quality laboratory training and BIS/FSSAI compliance</li>
+          <li>CIP system management and chemical cost control</li>
+          <li>SOP development and implementation training</li>
+          <li>New dairy product development and pilot trials</li>
+        </ul>
+      </details>
     </section>
 
     <section id="services">
       <h2>Services</h2>
       <div class="grid cards">
-        <article class="card"><strong>Technical Auditing of Dairy Plants</strong><p class="lead">Process, quality, utility, and cost-focused audits with practical action plans.</p></article>
-        <article class="card"><strong>Process Optimization</strong><p class="lead">Reduce losses, improve control, and increase production consistency.</p></article>
-        <article class="card"><strong>Yield Improvement</strong><p class="lead">Specialized interventions for butter, ghee, paneer, and fermented products.</p></article>
-        <article class="card"><strong>Quality & Lab SOPs</strong><p class="lead">BIS and FSSAI-aligned systems, testing discipline, and documentation.</p></article>
-        <article class="card"><strong>SOP Development & Training</strong><p class="lead">Practical SOP creation and floor-level implementation coaching.</p></article>
-        <article class="card"><strong>New Plant & Product Advisory</strong><p class="lead">Support for plant setup, commissioning, and new dairy product development.</p></article>
+        <div class="card"><strong>Technical Auditing of Dairy Plants</strong><p class="lead">Comprehensive audit covering process efficiency, material balance, quality systems, hygiene, and production cost.</p></div>
+        <div class="card"><strong>Dairy Plant Process Optimization</strong><p class="lead">Better process control, reduced losses, and optimized parameters.</p></div>
+        <div class="card"><strong>Yield Improvement for Butter, Ghee & Paneer</strong><p class="lead">Increase product yield through process corrections and raw material control.</p></div>
+        <div class="card"><strong>Quality Systems & Laboratory SOPs</strong><p class="lead">Strengthening quality monitoring and documentation aligned with BIS/FSSAI.</p></div>
+        <div class="card"><strong>SOP Development & Training</strong><p class="lead">Practical SOPs and implementation training for plant teams.</p></div>
+        <div class="card"><strong>New Plant Erection & Installations</strong><p class="lead">Advisory for planning, layout, machinery selection, and commissioning.</p></div>
       </div>
     </section>
 
     <section id="results">
-      <h2>Recent Achievements</h2>
+      <h2>Key Achievements</h2>
       <div class="grid cards">
-        <div class="card"><strong>Raw Milk MBRT</strong><ul><li>Improved from 30 min to 150 min through procurement discipline and hygiene controls.</li></ul></div>
-        <div class="card"><strong>Pouch Milk MBRT</strong><ul><li>Improved from 5.45 hrs to 7.45 hrs by strengthening CIP and sanitation practices.</li></ul></div>
-        <div class="card"><strong>Curd Product Quality</strong><ul><li>Improved body, texture, and taste; sales doubled after process correction.</li></ul></div>
-        <div class="card"><strong>Ice Cream Project</strong><ul><li>Supported 1000-litre plant commissioning and development of 50–60 SKUs.</li></ul></div>
+        <div class="card"><strong>Raw Milk MBRT Improvement</strong><p class="lead">30 minutes → 150 minutes</p></div>
+        <div class="card"><strong>Pouch Milk MBRT Improvement</strong><p class="lead">5.45 hours → 7.45 hours</p></div>
+        <div class="card"><strong>Ghee Grain & Flavour Improvement</strong><p class="lead">Significant product quality enhancement</p></div>
+        <div class="card"><strong>Curd Structure & Taste Improvement</strong><p class="lead">Sales doubled</p></div>
+        <div class="card"><strong>Ice Cream Plant Installation</strong><p class="lead">1000 litre plant commissioned, 50–60 SKUs developed</p></div>
+        <div class="card"><strong>Packing Film Yield Improvement</strong><p class="lead">10–12% improvement</p></div>
       </div>
     </section>
 
-    <section id="training">
-      <h2>Training Programs</h2>
-      <div class="card">
-        <ul>
-          <li>Raw milk procurement and MBRT improvement program.</li>
-          <li>Material balancing from milk payment to processing.</li>
-          <li>Good Manufacturing Practices (GMP) for dairy plants.</li>
-          <li>Yield improvement and packing section loss control.</li>
-          <li>Energy optimization in boilers, refrigeration, and utilities.</li>
-          <li>Microbial contamination control and CIP chemical optimization.</li>
-        </ul>
-      </div>
+    <section id="clients" class="split">
+      <div class="card"><h3>Major Dairy Clients</h3><ul><li>VKA Milk – Karur</li><li>Aroma Milk – Coimbatore</li><li>Rusi Milk – Winner Dairy Pondicherry</li><li>Amrut Dairy – Pollachi</li><li>Ruby Milk – Madurai</li><li>SMD Milk – Erode</li><li>Jallikattu Milk – RKR Dairy Products</li><li>SNP Milk – Madurai</li></ul></div>
+      <div class="card"><h3>Online Technical Support</h3><ul><li>Sandeep Paneer – Mysore</li><li>Mastany Lassi – Khandwa</li><li>Fish Tail Dairy – Pokhara, Nepal</li><li>Alvas Dairy – Singapore</li><li>Velan Foods – Madurai</li></ul></div>
+    </section>
+
+    <section id="project">
+      <h2>Major Ongoing Project</h2>
+      <p class="lead">₹150 Crore fully automated integrated dairy plant with PLC-based control and SCADA monitoring. Includes milk pouch packing, sterilized milk, powder, butter, ghee, yogurt, paneer, and ice cream production.</p>
+      <div class="card">VKA Dairy Karur – 300,000 LPD fully automated multi-product dairy plant.</div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <div class="card">
-        <p class="lead">For consultancy and technical audit support, connect with <strong>SSS DairyTech Consultants</strong>.</p>
+        <p>SSS DairyTech Consultants — consulting across India and internationally.</p>
         <p>Email: <a href="mailto:contact@sssdairytech.com" style="color:#67e8f9">contact@sssdairytech.com</a></p>
+        <p>Website: <a href="https://www.sssdairytech.com" style="color:#67e8f9">www.sssdairytech.com</a></p>
       </div>
     </section>
   </main>
@@ -158,8 +219,6 @@
     <div class="container">© <span id="year"></span> SSS DairyTech Consultants. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
