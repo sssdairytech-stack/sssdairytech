@@ -34,7 +34,17 @@
     nav .links { display: flex; gap: .8rem; flex-wrap: wrap; }
     nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
     nav a:hover { color: #fff; }
-    .brand { color: #67e8f9; font-weight: 700; letter-spacing: .09em; }
+    .brand { display: flex; align-items: center; gap: .7rem; color: #67e8f9; font-weight: 700; letter-spacing: .09em; }
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: .5rem;
+      background: #fff;
+      padding: .2rem;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .brand span { line-height: 1.15; }
     .hero { padding: 4rem 0 2rem; display: grid; gap: 1rem; }
     h1 { font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.15; margin: 0; }
     h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin: 0 0 .8rem; }
@@ -52,6 +62,20 @@
     details { background: rgba(15,23,42,.86); border: 1px solid var(--border); border-radius: 1rem; padding: .8rem 1rem; }
     summary { cursor: pointer; font-weight: 600; }
     .split { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); }
+    .consultant-card {
+      display: grid;
+      grid-template-columns: minmax(110px, 150px) 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .consultant-card img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: .8rem;
+      border: 1px solid var(--border);
+      background: #0b1220;
+    }
     .section-images { display: grid; gap: .8rem; margin: 1rem 0; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
     .section-images img {
       width: 100%;
@@ -64,14 +88,32 @@
     .hero-banner img { height: 280px; }
     .contact-line { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; margin: .45rem 0; }
     .contact-line .icon { font-size: 1rem; line-height: 1; }
+    .contact-brand { display: flex; align-items: center; gap: .6rem; }
+    .contact-brand img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      border-radius: .4rem;
+      background: #fff;
+      padding: .14rem;
+      border: 1px solid rgba(255,255,255,.25);
+    }
     footer { margin-top: 2rem; border-top: 1px solid var(--border); color: var(--muted); padding: 1.5rem 0 2rem; }
+    @media (max-width: 760px) {
+      .consultant-card { grid-template-columns: 1fr; }
+      .consultant-card img { width: min(220px, 100%); }
+      .brand span { font-size: .85rem; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <div class="brand">SSS DAIRY TECH CONSULTANTS</div>
+        <div class="brand">
+          <img src="sss dairytech logo.png" alt="SSS DairyTech logo" loading="lazy" />
+          <span>SSS DAIRY TECH CONSULTANTS</span>
+        </div>
         <div class="links">
           <a href="#home">Home</a><a href="#consultant">Consultant</a><a href="#audit">Tech Audit</a><a href="#methodology">Methodology</a><a href="#kra">KRA</a><a href="#services">Services</a><a href="#results">Results</a><a href="#clients">Clients</a><a href="#training">Training</a><a href="#project">Project</a><a href="#contact">Contact</a>
         </div>
@@ -112,11 +154,14 @@
     </section>
 
     <section id="consultant" class="split">
-      <div class="card">
-        <h2>About the Consultant</h2>
-        <h3>Mr. S. Somasundaram</h3>
-        <p class="lead">Senior Dairy Technologist & Industry Professional with over 45 years of experience in dairy plant operations, technical management, and consulting.</p>
-        <p class="lead">He has worked with major dairy organizations including Aavin, served as Plant Head at Heritage Foods India Ltd, and later as CEO of Vijay Dairy & Farm Products Pvt Ltd, Trichy. Since 2018, he has been working as a freelance dairy consultant, supporting plants in technical audits, process optimisation, quality and hygiene system strengthening, yield improvement, and cost-efficiency programs.</p>
+      <div class="card consultant-card">
+        <img src="somu photo new.jpg" alt="Mr. S. Somasundaram, Senior Dairy Consultant" loading="lazy" />
+        <div>
+          <h2>About the Consultant</h2>
+          <h3>Mr. S. Somasundaram</h3>
+          <p class="lead">Senior Dairy Technologist & Industry Professional with over 45 years of experience in dairy plant operations, technical management, and consulting.</p>
+          <p class="lead">He has worked with major dairy organizations including Aavin, served as Plant Head at Heritage Foods India Ltd, and later as CEO of Vijay Dairy & Farm Products Pvt Ltd, Trichy. Since 2018, he has been working as a freelance dairy consultant, supporting plants in technical audits, process optimisation, quality and hygiene system strengthening, yield improvement, and cost-efficiency programs.</p>
+        </div>
       </div>
       <div class="card">
         <h3>Key Expertise</h3>
@@ -256,7 +301,7 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="card">
-        <p>SSS DairyTech Consultants — consulting across India and internationally.</p>
+        <p class="contact-brand"><img src="sss dairytech logo.png" alt="SSS DairyTech logo" loading="lazy" /> SSS DairyTech Consultants — consulting across India and internationally.</p>
         <p class="contact-line"><span class="icon" aria-hidden="true">📧</span> Email: <a href="mailto:contact@sssdairytech.com" style="color:#67e8f9">contact@sssdairytech.com</a></p>
         <p class="contact-line"><span class="icon" aria-hidden="true">🌐</span> Website: <a href="https://www.sssdairytech.com" style="color:#67e8f9">www.sssdairytech.com</a></p>
         <p class="contact-line"><span class="icon" aria-hidden="true">📱</span> Mobile: <a href="tel:+919944427435" style="color:#67e8f9">+91-9944427435</a>, <a href="tel:+919443575974" style="color:#67e8f9">+91-9443575974</a></p>
