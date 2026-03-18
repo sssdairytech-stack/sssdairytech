@@ -218,6 +218,21 @@
           { value: "Sales doubled", label: "Curd Structure & Taste Improvement" },
         ];
 
+        const featuredGallery = [
+          {
+            src: "https://mqr4-my.sharepoint.com/:i:/g/personal/somasundaram_mqr4_onmicrosoft_com/IQCJxXA2nXcwQKSNQidGOCgMAWoezzcvwssX3odKYE1nlPk?e=doBMal",
+            alt: "Dairy plant featured image 1",
+          },
+          {
+            src: "https://mqr4-my.sharepoint.com/:i:/g/personal/somasundaram_mqr4_onmicrosoft_com/IQB83dpn7QOASpkke_ZQXGzvAXLuiiePaIdBSNhUJgey8js?e=wovh10",
+            alt: "Dairy plant featured image 2",
+          },
+          {
+            src: "https://mqr4-my.sharepoint.com/:i:/g/personal/somasundaram_mqr4_onmicrosoft_com/IQAHm2GDUqybRqo2Yp7EZ7gfAU9Ei9jgQD5s3lolBgmtZAM?e=An0sa7",
+            alt: "Dairy plant featured image 3",
+          },
+        ];
+
         const auditSteps = [
           "Process and product flow assessment across the plant",
           "Material balance study and identification of yield losses",
@@ -411,6 +426,31 @@
                       ))}
                     </div>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="featured-gallery" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-xl shadow-cyan-950/20 sm:p-6 lg:p-8">
+                <div className="mb-8 text-center lg:mb-10">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Featured Images</p>
+                  <h2 id="featured-gallery" className="mt-2 text-3xl font-bold sm:text-4xl">A closer look at dairy plant operations</h2>
+                  <p className="mx-auto mt-4 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">
+                    Three featured images are placed left to right below the hero section with responsive sizing so they stay clear and visually balanced across mobile, tablet, and desktop devices.
+                  </p>
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {featuredGallery.map((image, index) => (
+                    <div key={image.src} className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/80 shadow-lg shadow-black/20">
+                      <ImageWithFallback
+                        src={image.src}
+                        alt={image.alt}
+                        className="h-64 w-full object-cover object-center transition duration-300 group-hover:scale-[1.02] sm:h-72 lg:h-80"
+                        fallback={<span className="px-4 py-10">Featured image {index + 1}</span>}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
