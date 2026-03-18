@@ -218,21 +218,6 @@
           { value: "Sales doubled", label: "Curd Structure & Taste Improvement" },
         ];
 
-        const featuredGallery = [
-          {
-            src: "https://mqr4-my.sharepoint.com/:i:/g/personal/somasundaram_mqr4_onmicrosoft_com/IQCJxXA2nXcwQKSNQidGOCgMAWoezzcvwssX3odKYE1nlPk?e=doBMal",
-            alt: "Dairy plant featured image 1",
-          },
-          {
-            src: "https://mqr4-my.sharepoint.com/:i:/g/personal/somasundaram_mqr4_onmicrosoft_com/IQB83dpn7QOASpkke_ZQXGzvAXLuiiePaIdBSNhUJgey8js?e=wovh10",
-            alt: "Dairy plant featured image 2",
-          },
-          {
-            src: "https://mqr4-my.sharepoint.com/:i:/g/personal/somasundaram_mqr4_onmicrosoft_com/IQAHm2GDUqybRqo2Yp7EZ7gfAU9Ei9jgQD5s3lolBgmtZAM?e=An0sa7",
-            alt: "Dairy plant featured image 3",
-          },
-        ];
-
         const auditSteps = [
           "Process and product flow assessment across the plant",
           "Material balance study and identification of yield losses",
@@ -427,24 +412,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
-
-            <section aria-label="Featured dairy plant images" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-                {featuredGallery.map((image, index) => (
-                  <div
-                    key={image.src}
-                    className="flex min-h-[240px] items-center justify-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/90 p-3 shadow-lg shadow-cyan-950/20 sm:min-h-[280px] lg:min-h-[320px]"
-                  >
-                    <ImageWithFallback
-                      src={image.src}
-                      alt={image.alt}
-                      className="h-full max-h-[300px] w-full rounded-[1.1rem] object-contain object-center sm:max-h-[340px] lg:max-h-[380px]"
-                      fallback={<span className="px-4 py-10">Featured image {index + 1}</span>}
-                    />
-                  </div>
-                ))}
               </div>
             </section>
 
