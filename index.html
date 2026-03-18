@@ -430,28 +430,21 @@
               </div>
             </section>
 
-            <section aria-labelledby="featured-gallery" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-xl shadow-cyan-950/20 sm:p-6 lg:p-8">
-                <div className="mb-8 text-center lg:mb-10">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Featured Images</p>
-                  <h2 id="featured-gallery" className="mt-2 text-3xl font-bold sm:text-4xl">A closer look at dairy plant operations</h2>
-                  <p className="mx-auto mt-4 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">
-                    Three featured images are placed left to right below the hero section with responsive sizing so they stay clear and visually balanced across mobile, tablet, and desktop devices.
-                  </p>
-                </div>
-
-                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                  {featuredGallery.map((image, index) => (
-                    <div key={image.src} className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/80 shadow-lg shadow-black/20">
-                      <ImageWithFallback
-                        src={image.src}
-                        alt={image.alt}
-                        className="h-64 w-full object-cover object-center transition duration-300 group-hover:scale-[1.02] sm:h-72 lg:h-80"
-                        fallback={<span className="px-4 py-10">Featured image {index + 1}</span>}
-                      />
-                    </div>
-                  ))}
-                </div>
+            <section aria-label="Featured dairy plant images" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+                {featuredGallery.map((image, index) => (
+                  <div
+                    key={image.src}
+                    className="flex min-h-[240px] items-center justify-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/90 p-3 shadow-lg shadow-cyan-950/20 sm:min-h-[280px] lg:min-h-[320px]"
+                  >
+                    <ImageWithFallback
+                      src={image.src}
+                      alt={image.alt}
+                      className="h-full max-h-[300px] w-full rounded-[1.1rem] object-contain object-center sm:max-h-[340px] lg:max-h-[380px]"
+                      fallback={<span className="px-4 py-10">Featured image {index + 1}</span>}
+                    />
+                  </div>
+                ))}
               </div>
             </section>
 
