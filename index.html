@@ -1043,8 +1043,6 @@
               <p class="form-helper">Complete the form with your project details and you will see a confirmation on this page after submission.</p>
               <form class="contact-form" id="contact-form" novalidate>
                 <input type="hidden" name="_subject" value="New enquiry from SSS DairyTech website" />
-                <input type="hidden" name="sender_timezone" id="contact-timezone" value="IST (Asia/Kolkata, UTC+05:30)" />
-                <input type="hidden" name="submitted_at_ist" id="contact-submitted-at" value="" />
                 <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" />
                 <div class="contact-form-grid">
                   <div class="form-field">
@@ -1068,6 +1066,7 @@
                     <textarea id="contact-message" name="message" placeholder="Tell us about your plant, challenge, or project scope" required></textarea>
                   </div>
                 </div>
+                <input type="hidden" name="submitted_at_ist" id="contact-submitted-at" value="" />
                 <div class="form-actions">
                   <button class="btn btn-primary" type="submit">Send enquiry</button>
                   <p class="status-message" id="form-status" role="status" aria-live="polite"></p>
@@ -1090,14 +1089,9 @@
     <script>
       const contactForm = document.getElementById("contact-form");
       const formStatus = document.getElementById("form-status");
-      const contactTimezone = document.getElementById("contact-timezone");
       const contactSubmittedAt = document.getElementById("contact-submitted-at");
 
       const setIndianTimestamp = () => {
-        if (contactTimezone) {
-          contactTimezone.value = "IST (Asia/Kolkata, UTC+05:30)";
-        }
-
         if (contactSubmittedAt) {
           const indianTimestamp = new Intl.DateTimeFormat("en-IN", {
             timeZone: "Asia/Kolkata",
