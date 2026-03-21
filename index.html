@@ -4,693 +4,957 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SSS DairyTech Consultants</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
-  <body class="bg-slate-950">
-    <div id="root"></div>
-
-    <script type="text/babel">
-      const { useState } = React;
-
-      function ImageWithFallback({ src, alt, className, fallback }) {
-        const [hasError, setHasError] = useState(false);
-
-        if (!src || hasError) {
-          return (
-            <div className={`flex items-center justify-center ${className} bg-white/10 text-center text-xs text-slate-300`}>
-              {fallback}
-            </div>
-          );
-        }
-
-        return <img src={src} alt={alt} className={className} onError={() => setHasError(true)} />;
+    <meta
+      name="description"
+      content="SSS DairyTech Consultants helps dairy plants improve production efficiency, quality systems, yields, and profitability through practical consulting."
+    />
+    <style>
+      :root {
+        --bg: #020617;
+        --panel: rgba(15, 23, 42, 0.9);
+        --panel-strong: #0f172a;
+        --panel-soft: rgba(30, 41, 59, 0.7);
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --line: rgba(148, 163, 184, 0.18);
+        --accent: #22d3ee;
+        --accent-strong: #06b6d4;
+        --accent-soft: rgba(34, 211, 238, 0.12);
+        --white-soft: rgba(255, 255, 255, 0.06);
+        --shadow: 0 24px 80px rgba(8, 47, 73, 0.28);
+        --radius-lg: 30px;
+        --radius-md: 22px;
+        --radius-sm: 16px;
+        --max-width: 1180px;
       }
 
-      function SSSDairyTechPreview() {
-        const logoSrc = "sss dairytech logo.png";
-        const photoSrc = "somu photo new.jpg";
+      * {
+        box-sizing: border-box;
+      }
 
-        const contactItems = [
-          {
-            label: "Mobile",
-            value: "+91-9944427435, +91- 9443575974",
-            href: "tel:+919944427435",
-            icon: (
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.85 19.85 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.85 19.85 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.77.68 2.6a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.47-1.24a2 2 0 0 1 2.11-.45c.83.33 1.7.56 2.6.68A2 2 0 0 1 22 16.92z" />
-              </svg>
-            ),
-          },
-          {
-            label: "Email",
-            value: "sssdairytech@gmail.com",
-            href: "mailto:sssdairytech@gmail.com",
-            icon: (
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <polyline points="3 7 12 13 21 7" />
-              </svg>
-            ),
-          },
-          {
-            label: "Address",
-            value: "Sundaranivas, 14 Vallal Alagappar Street, Navarathina Nagar, Karaikudi - 630 002, Tamilnadu, India",
-            href: "https://maps.google.com/?q=Sundaranivas%2C%2014%20Vallal%20Alagappar%20Street%2C%20Navarathina%20Nagar%2C%20Karaikudi%20630002%2C%20Tamilnadu%2C%20India",
-            icon: (
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            ),
-          },
-        ];
+      html {
+        scroll-behavior: smooth;
+      }
 
-        const kraDepartments = [
-          {
-            title: "Production – Milk",
-            points: ["Cost Control", "Production Efficiency", "Product Quality", "Employee Motivation"],
-          },
-          {
-            title: "Production – By Products",
-            points: ["Cost Control", "Production Efficiency", "Product Quality", "Employee Motivation"],
-          },
-          {
-            title: "Maintenance",
-            points: ["Equipment Reliability", "Energy Consumption", "Cost Controls", "Preventive Maintenance Schedules"],
-          },
-          {
-            title: "Procurement",
-            points: ["Farm Feed Management", "VLCC Performance", "MBRT Standards", "Volume Procurement"],
-          },
-          {
-            title: "Quality Assurance",
-            points: ["Quality Control", "Testing Efficiency", "Training", "Complaint Reduction"],
-          },
-          {
-            title: "Packing & Dispatch",
-            points: ["On-Time Dispatch", "Cold Chain Effectiveness", "Correct Quantity", "Safety System"],
-          },
-          {
-            title: "CIP (Cleaning In Place) System",
-            points: [
-              "CIP Effectiveness",
-              "Chemical Concentration Control",
-              "Cleaning Cycle Discipline",
-              "Hygiene Assurance",
-            ],
-          },
-          {
-            title: "Plant Sanitation & Hygiene",
-            points: [
-              "Equipment Sanitation",
-              "Plant Hygiene Standards",
-              "Microbial Risk Control",
-              "Cleaning Verification",
-            ],
-          },
-          {
-            title: "Stores",
-            points: [
-              "Minimum stock and safety stock control",
-              "FIFO implementation for all materials",
-              "Inventory accuracy and stock verification",
-              "Minimising overall stock value and avoiding excess inventory",
-              "Identification and disposal of unused or slow-moving stock",
-            ],
-          },
-          {
-            title: "Purchase",
-            points: [
-              "Vendor selection and qualification",
-              "Cost negotiation and price benchmarking",
-              "Timely procurement based on minimum and safety stock levels",
-              "Material quality compliance",
-              "Coordination with stores to prevent overstocking",
-            ],
-          },
-        ];
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(6, 182, 212, 0.18), transparent 30%),
+          radial-gradient(circle at right bottom, rgba(37, 99, 235, 0.18), transparent 28%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
 
-        const trainingPrograms = [
-          "Raw milk procurement improvement and MBRT improvement program",
-          "Material balancing from milk payment to milk receipt and processing",
-          "Process milk training – maintaining product aroma and process consistency",
-          "Good Manufacturing Practices (GMP) for dairy plants",
-          "Yield improvement across milk processing operations",
-          "Supervisor training on process flow and importance of each operation",
-          "Packing section training – film yield improvement and loss control",
-          "Selection of packing film suppliers and requirements while issuing purchase orders",
-          "Energy management in dairy plants – reducing power and fuel consumption",
-          "Assessment of current plant energy consumption and improvement methods",
-          "Quality laboratory training – chemical and microbiological testing procedures",
-          "Compliance with BIS and FSSAI quality standards",
-          "Control of microbial contamination in dairy plants",
-          "Line study techniques to identify sources of contamination",
-          "CIP system management – selecting the right chemicals based on water quality and process",
-          "Control of CIP chemical cost in dairy plants",
-          "Development of Standard Operating Procedures (SOPs) for different dairy plant operations",
-          "Training plant personnel on implementation and adherence to SOPs",
-          "New dairy product development including process standardization and pilot trials",
-        ];
+      img {
+        display: block;
+        max-width: 100%;
+      }
 
-        const services = [
-          {
-            title: "Technical Auditing of Dairy Plants (Gap Analysis & Improvement Roadmap)",
-            description:
-              "Detailed plant assessment covering process flow, material balance, yield loss points, quality gaps, utility performance, and cost reduction opportunities with a practical improvement roadmap.",
-          },
-          {
-            title: "Dairy Plant Process Optimization",
-            description:
-              "Improvement of processing parameters, product flow, equipment utilization, and shop-floor discipline to achieve better consistency, lower losses, and smoother daily operations.",
-          },
-          {
-            title: "Yield Improvement for Butter, Ghee & Paneer",
-            description:
-              "Focused technical support to improve fat recovery, moisture control, process handling, and product standardization for better yield and profitability in fat-rich and value-added products.",
-          },
-          {
-            title: "Quality Systems & Laboratory SOPs",
-            description:
-              "Development and strengthening of laboratory systems, testing discipline, result interpretation, documentation, and quality control procedures aligned with dairy plant requirements.",
-          },
-          {
-            title: "Development of Standard Operating Procedures (SOPs) for dairy plant operations",
-            description:
-              "Preparation of clear and practical SOPs for production, quality, sanitation, packing, utilities, and handling operations to improve consistency and control.",
-          },
-          {
-            title: "Training of plant teams on implementation of SOPs",
-            description:
-              "Hands-on guidance for supervisors, operators, quality staff, and department heads to ensure SOP understanding, execution discipline, and measurable implementation on the shop floor.",
-          },
-          {
-            title:
-              "Consultancy for new dairy plant erection, project planning, equipment selection, and installation supervision",
-            description:
-              "End-to-end advisory for new dairy projects including planning, process selection, utility integration, vendor coordination, installation review, commissioning support, and phased startup guidance.",
-          },
-          {
-            title: "ERP for Milk Procurement & Tracking",
-            description:
-              "Support in structuring milk procurement monitoring systems for better tracking of quantity, quality, payment accuracy, route control, and procurement efficiency.",
-          },
-          {
-            title: "Energy & Operational Efficiency",
-            description:
-              "Assessment of steam, refrigeration, electrical power, compressed air, water, and utility usage to identify practical measures for reducing operating cost and improving efficiency.",
-          },
-          {
-            title: "New Dairy Product Development",
-            description:
-              "Consulting support for concept development, formulation, process standardization, pilot trials, stability improvement, and commercialization of new dairy products.",
-          },
-        ];
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-        const stats = [
-          { value: "45+", label: "Years of Industry Experience" },
-          { value: "30 → 150 min", label: "Raw Milk MBRT Improvement" },
-          { value: "5.45 → 7.45 hrs", label: "Pouch Milk MBRT Improvement" },
-          { value: "10–12%", label: "Pouch Yield Improvement" },
-          { value: "Better grain & flavour", label: "Ghee Quality Improvement" },
-          { value: "Sales doubled", label: "Curd Structure & Taste Improvement" },
-        ];
+      .container {
+        width: min(var(--max-width), calc(100% - 32px));
+        margin: 0 auto;
+      }
 
-        const auditSteps = [
-          "Process and product flow assessment across the plant",
-          "Material balance study and identification of yield losses",
-          "Quality systems review including laboratory practices",
-          "Utility and energy performance evaluation (steam, refrigeration, power, water)",
-          "Cost of production analysis and operational loss identification",
-          "Department-wise KRA review and accountability mapping",
-          "Identification of improvement opportunities and priority action areas",
-        ];
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid var(--line);
+        background: rgba(2, 6, 23, 0.92);
+        backdrop-filter: blur(14px);
+      }
 
-        const methodologyPoints = [
-          "Shop-floor observation and detailed line walkthrough",
-          "Review of production, quality, and dispatch records",
-          "Interaction and discussion with department heads and key personnel",
-          "Identification of deviations, operational gaps, and root causes",
-          "Daily Gemba meetings to resolve issues and improve inter-department coordination",
-          "Preparation of action plans with responsibilities and timelines",
-          "Follow-up review of corrective actions and performance improvement",
-        ];
+      .header-inner {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
 
-        const achievements = [
-          {
-            title: "Ice Cream Plant Installation",
-            result: "1000 litre/day ice cream plant established",
-            detail:
-              "Successful installation and commissioning of a 1000 LPD ice cream plant producing natural and regular ice creams including cones, cups, family packs, kulfi varieties, and special nut and flavour variants.",
-          },
-          {
-            title: "Raw Milk MBRT Improvement",
-            result: "30 minutes → 150 minutes",
-            detail:
-              "Improved raw milk quality through procurement discipline, MBRT monitoring, and hygiene control at collection level.",
-          },
-          {
-            title: "Pouch Milk MBRT Improvement",
-            result: "5.45 hours → 7.45 hours",
-            detail:
-              "Enhanced processing hygiene, CIP effectiveness, and packing line sanitation to improve microbial quality of pouch milk.",
-          },
-          {
-            title: "Ghee Grain & Flavour Improvement",
-            result: "Significant product quality enhancement",
-            detail:
-              "Optimised ghee processing parameters to improve grain formation and flavour, resulting in stronger consumer acceptance.",
-          },
-          {
-            title: "Curd Structure & Taste Improvement",
-            result: "Sales doubled",
-            detail:
-              "Improved fermentation control and culture management leading to better curd body, texture, and taste which significantly increased market demand.",
-          },
-          {
-            title: "Packing Film Yield Improvement",
-            result: "10–12% improvement",
-            detail: "Reduced packing losses and improved material utilization through operational control.",
-          },
-        ];
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
 
-        const majorProjectProducts = [
-          "Milk pouch packing",
-          "Sterilized milk processing",
-          "Milk powder production",
-          "Butter production",
-          "Ghee manufacturing",
-          "Yogurt / fermented milk products",
-          "Paneer production",
-          "Ice cream production",
-          "Curd production (pouch, cup and bucket packaging)",
-        ];
+      .brand img {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        object-fit: contain;
+        background: #fff;
+        padding: 4px;
+      }
 
-        const clientEngagements = {
-          majorClients: [
-            "VKA Milk – Karur",
-            "Sri Mahalalakshmi Dairy- Aroma milk coimbatore",
-            "Winner Dairy- Rusi milk pondicherry",
-            "Amrut Dairy – Pollachi",
-            "Ruby Milk – Madurai",
-            "SMD Milk – Erode",
-            "Jallikattu Milk – RKR Dairy Products",
-            "SNP Milk – Madurai",
-          ],
-          onlineSupport: [
-            "Sandeep Paneer – Mysore",
-            "Mastany Lassi – Khandwa, Madhya Pradesh",
-            "Fish Tail Dairy – Pokhara, Nepal",
-            "Alvas Dairy – Singapore",
-            "Velan Foods – Madurai",
-          ],
-          projects: ["VKA Dairy Karur – 300,000 LPD fully automated multi-product dairy plant"],
-        };
+      .brand-kicker,
+      .section-kicker,
+      .eyebrow {
+        margin: 0;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
 
-        const hasRequiredData =
-          kraDepartments.length > 0 &&
-          trainingPrograms.length > 0 &&
-          services.length > 0 &&
-          achievements.length > 0;
+      .brand-subtitle {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
 
-        if (!hasRequiredData) {
-          throw new Error("Required homepage content is missing.");
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 16px;
+        font-size: 0.95rem;
+        color: #cbd5e1;
+      }
+
+      .nav a:hover,
+      .mobile-nav a:hover {
+        color: #fff;
+      }
+
+      .hero {
+        padding: 72px 0 42px;
+      }
+
+      .hero-grid,
+      .split-grid,
+      .project-grid {
+        display: grid;
+        gap: 28px;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+        align-items: center;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 16px;
+        border: 1px solid rgba(34, 211, 238, 0.28);
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.08);
+        color: #cffafe;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 18px 0 18px;
+        font-size: clamp(2.5rem, 5vw, 4.4rem);
+        line-height: 1.08;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.15;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+
+      .lead,
+      .section-intro {
+        color: #cbd5e1;
+        font-size: 1.04rem;
+      }
+
+      .highlight {
+        color: #a5f3fc;
+      }
+
+      .card,
+      details {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-proof,
+      .hero-aside,
+      .section,
+      .contact-wrap,
+      .card {
+        padding: 28px;
+      }
+
+      .hero-proof {
+        margin-top: 24px;
+        border: 1px solid rgba(34, 211, 238, 0.16);
+        border-radius: 24px;
+        background: var(--accent-soft);
+      }
+
+      .bullet-list,
+      .service-list,
+      .plain-list,
+      .contact-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .bullet-list li,
+      .service-list li,
+      .plain-list li,
+      .contact-list li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .bullet-list li + li,
+      .service-list li + li,
+      .plain-list li + li,
+      .contact-list li + li {
+        margin-top: 10px;
+      }
+
+      .bullet-list li::before,
+      .service-list li::before,
+      .plain-list li::before,
+      .contact-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 18px;
+        border: 1px solid transparent;
+        font-weight: 700;
+        transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #082f49;
+      }
+
+      .btn-secondary {
+        background: rgba(34, 211, 238, 0.08);
+        border-color: rgba(34, 211, 238, 0.3);
+        color: #cffafe;
+      }
+
+      .btn-ghost {
+        border-color: rgba(255, 255, 255, 0.16);
+        color: #fff;
+      }
+
+      .hero-aside {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .hero-brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 26px;
+      }
+
+      .hero-brand img {
+        width: 92px;
+        height: 92px;
+        border-radius: 24px;
+        object-fit: contain;
+        background: #fff;
+        padding: 10px;
+      }
+
+      .stat-grid,
+      .audit-grid,
+      .two-col-grid,
+      .services-grid,
+      .results-grid,
+      .clients-grid,
+      .project-points,
+      .contact-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat-card,
+      .mini-card,
+      .service-card,
+      .achievement-card,
+      .client-card,
+      .project-chip,
+      .contact-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--panel-soft);
+      }
+
+      .stat-card,
+      .mini-card,
+      .service-card,
+      .achievement-card,
+      .client-card,
+      .contact-card {
+        padding: 20px;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #a5f3fc;
+      }
+
+      .stat-label,
+      .muted {
+        color: var(--muted);
+      }
+
+      .section {
+        margin: 26px auto;
+      }
+
+      .split-grid,
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .audit-grid,
+      .two-col-grid,
+      .services-grid,
+      .results-grid,
+      .clients-grid,
+      .project-points,
+      .contact-grid {
+        margin-top: 22px;
+      }
+
+      .audit-grid,
+      .two-col-grid,
+      .project-points,
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .services-grid,
+      .results-grid,
+      .clients-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .mini-card {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .mini-index {
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent);
+        color: #082f49;
+        font-weight: 800;
+      }
+
+      details {
+        padding: 0;
+        overflow: hidden;
+      }
+
+      details + details {
+        margin-top: 18px;
+      }
+
+      summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 24px 28px;
+        font-size: 1.24rem;
+        font-weight: 700;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .details-body {
+        padding: 0 28px 28px;
+      }
+
+      .details-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .chevron {
+        color: var(--accent);
+        transition: transform 0.2s ease;
+      }
+
+      details[open] .chevron {
+        transform: rotate(180deg);
+      }
+
+      .service-bar {
+        width: 64px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+        margin-bottom: 18px;
+      }
+
+      .achievement-result {
+        margin: 16px 0;
+        font-size: 1.85rem;
+        font-weight: 800;
+        color: #fff;
+      }
+
+      .project-chip {
+        padding: 14px 16px;
+        font-size: 0.96rem;
+        color: #cbd5e1;
+      }
+
+      .contact-wrap {
+        background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(15, 23, 42, 0.95), rgba(37, 99, 235, 0.12));
+      }
+
+      .contact-header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .contact-header img {
+        width: 72px;
+        height: 72px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 20px;
+        padding: 8px;
+      }
+
+      .contact-card strong {
+        display: block;
+        margin-bottom: 6px;
+        color: #cffafe;
+        font-size: 0.8rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .consultant-photo {
+        width: min(100%, 260px);
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        margin: 18px 0 22px;
+      }
+
+      .mobile-nav {
+        position: sticky;
+        bottom: 0;
+        z-index: 45;
+        display: none;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 8px;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+        border-top: 1px solid var(--line);
+        background: rgba(2, 6, 23, 0.95);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-nav a {
+        padding: 10px 6px;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 0.72rem;
+        color: #cbd5e1;
+      }
+
+      .spaced > * + * {
+        margin-top: 14px;
+      }
+
+      @media (max-width: 1080px) {
+        .hero-grid,
+        .split-grid,
+        .project-grid,
+        .services-grid,
+        .results-grid,
+        .clients-grid {
+          grid-template-columns: 1fr;
         }
 
-        return (
-          <div className="min-h-screen bg-slate-950 text-white">
-            <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-              <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-                <div className="flex items-center gap-3">
-                  <ImageWithFallback
-                    src={logoSrc}
-                    alt="SSS DairyTech Consultants logo"
-                    className="h-12 w-12 rounded-full bg-white object-contain p-1 sm:h-14 sm:w-14"
-                    fallback={<span className="px-2">Logo</span>}
-                  />
-                  <div>
-                    <p className="text-sm font-semibold tracking-[0.2em] text-cyan-300">SSS DAIRY TECH</p>
-                    <p className="text-xs text-slate-300 sm:text-sm">Consultants</p>
-                  </div>
-                </div>
+        .audit-grid,
+        .two-col-grid,
+        .project-points,
+        .contact-grid,
+        .stat-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
 
-                <nav className="hidden flex-wrap gap-5 text-sm text-slate-300 lg:flex">
-                  <a href="#home" className="hover:text-white">Home</a>
-                  <a href="#consultant" className="hover:text-white">Consultant</a>
-                  <a href="#audit" className="hover:text-white">Tech Audit</a>
-                  <a href="#methodology" className="hover:text-white">Methodology</a>
-                  <a href="#kra" className="hover:text-white">KRA</a>
-                  <a href="#services" className="hover:text-white">Services</a>
-                  <a href="#results" className="hover:text-white">Results</a>
-                  <a href="#clients" className="hover:text-white">Clients</a>
-                  <a href="#training" className="hover:text-white">Training</a>
-                  <a href="#project" className="hover:text-white">Project</a>
-                  <a href="#contact" className="hover:text-white">Contact</a>
-                </nav>
-              </div>
-            </header>
+        .nav {
+          display: none;
+        }
 
-            <section id="home" className="relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.18),transparent_30%)]" />
-              <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
-                <div className="flex flex-col justify-center">
-                  <div className="mb-5 inline-flex w-fit items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200">
-                    Trusted Dairy Plant Consulting Expertise
-                  </div>
+        .mobile-nav {
+          display: grid;
+        }
+      }
 
-                  <h1 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                    Turning dairy plants into <span className="text-cyan-300">profitable, efficient operations</span>
-                  </h1>
+      @media (max-width: 720px) {
+        .container {
+          width: min(var(--max-width), calc(100% - 20px));
+        }
 
-                  <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
-                    SSS DairyTech Consultants helps dairy plants improve production efficiency, quality systems,
-                    product yield, laboratory practices, product flavour, texture, microbial quality, and profitability
-                    through practical hands-on consulting.
-                  </p>
+        .hero,
+        .section {
+          padding-left: 0;
+          padding-right: 0;
+        }
 
-                  <div className="mt-6 rounded-[1.5rem] border border-cyan-400/20 bg-cyan-400/5 p-4 text-sm text-slate-300">
-                    <p className="font-semibold text-white">Visible results delivered in dairy plants:</p>
-                    <ul className="mt-3 space-y-2">
-                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Raw milk MBRT improved from 30 minutes to 150 minutes</span></li>
-                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Pouch milk MBRT improved from 5.45 hours to 7.45 hours</span></li>
-                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Ghee grain and flavour improved through process optimisation</span></li>
-                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Curd structure and taste improvement resulted in doubling the sales</span></li>
-                    </ul>
-                  </div>
+        .hero-proof,
+        .hero-aside,
+        .section,
+        .contact-wrap,
+        .card,
+        .details-body,
+        summary {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
 
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="#kra" className="rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-6 py-3 text-center font-semibold text-cyan-100 transition hover:bg-cyan-300/20">View Department KRAs</a>
-                    <a href="#contact" className="rounded-2xl bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-300">Request Consultation</a>
-                    <a href="#training" className="rounded-2xl border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:bg-white/5">View Training Programs</a>
-                  </div>
-                </div>
+        .audit-grid,
+        .two-col-grid,
+        .project-points,
+        .contact-grid,
+        .stat-grid {
+          grid-template-columns: 1fr;
+        }
 
-                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-                  <div className="rounded-[1.5rem] bg-slate-900 p-6">
-                    <div className="mb-6 flex items-center gap-4">
-                      <ImageWithFallback
-                        src={logoSrc}
-                        alt="SSS DairyTech logo large"
-                        className="h-20 w-20 rounded-2xl bg-white object-contain p-2"
-                        fallback={<span className="px-2">Logo</span>}
-                      />
-                      <div>
-                        <p className="text-xl font-semibold">SSS DairyTech Consultants</p>
-                        <p className="mt-1 text-sm text-slate-400">Strategic Business Advisors for Dairy Plants</p>
-                      </div>
-                    </div>
+        h1 {
+          font-size: 2.25rem;
+        }
 
-                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-                      {stats.map((item) => (
-                        <div key={item.label} className="rounded-2xl border border-white/10 bg-slate-800/80 p-4">
-                          <div className="text-xl font-bold text-cyan-300 sm:text-2xl">{item.value}</div>
-                          <div className="mt-1 text-xs leading-5 text-slate-300 sm:text-sm">{item.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+        h2 {
+          font-size: 1.8rem;
+        }
 
-            <section id="consultant" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">About the Consultant</p>
-                  <h2 className="mt-2 text-3xl font-bold">Mr. S. Somasundaram</h2>
-                  <ImageWithFallback
-                    src={photoSrc}
-                    alt="Mr. S. Somasundaram dairy consultant"
-                    className="mt-4 h-auto w-56 rounded-2xl border border-white/10 object-cover"
-                    fallback={<span className="px-4 py-10">Consultant Photo</span>}
-                  />
-                  <p className="mt-4 text-lg text-slate-300">Senior Dairy Technologist &amp; Industry Professional</p>
-                  <p className="mt-4 text-sm leading-6 text-slate-300">Mr. S. Somasundaram is a senior dairy technologist and industry professional with over 45 years of experience in the dairy sector. He is a Dairy Technologist from NDRI, Bangalore and an MBA postgraduate with extensive hands-on experience in dairy plant operations, technical management, and dairy industry consulting.</p>
-                  <p className="mt-4 text-sm leading-6 text-slate-300">He has worked with major dairy organizations including Aavin for nearly three decades, served as Plant Head at Heritage Foods India Ltd, and later as CEO of Vijay Dairy &amp; Farm Products Pvt Ltd, Trichy, a dairy plant with a capacity of about 2 lakh litres per day including milk powder production.</p>
-                </div>
+        .button-row {
+          flex-direction: column;
+        }
 
-                <div className="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
-                  <h3 className="mb-4 text-2xl font-semibold">Key Expertise</h3>
-                  <ul className="space-y-3 text-sm text-slate-300">
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Dairy plant technical auditing and performance improvement</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Milk procurement system improvement and MBRT strengthening</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Material balance and yield optimization</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Quality systems implementation and microbial contamination control</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />CIP system management, sanitation control, and chemical cost optimization</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Energy optimization, operational cost reduction, and daily Gemba meeting systems</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
+        .btn {
+          width: 100%;
+        }
 
-            <section id="audit" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div className="mb-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Dairy Plant Technical Audit Program</p>
-                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Gap analysis and improvement roadmap for quality, yield, and operating cost</h2>
-                <p className="mt-4 max-w-3xl text-slate-300">Technical auditing is a major consulting area of SSS DairyTech Consultants. The program studies plant operations, identifies performance gaps, and recommends practical actions to improve quality consistency, increase yield, and reduce cost of operations.</p>
-              </div>
+        .contact-header,
+        .hero-brand,
+        .brand {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="SSS DairyTech Consultants home">
+          <img src="sss dairytech logo.png" alt="SSS DairyTech Consultants logo" />
+          <div>
+            <p class="brand-kicker">SSS Dairy Tech</p>
+            <p class="brand-subtitle">Consultants</p>
+          </div>
+        </a>
 
-              <div className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-6">
-                <h3 className="text-xl font-semibold">Audit Focus Areas</h3>
-                <div className="mt-4 grid gap-3 lg:grid-cols-2">
-                  {auditSteps.map((step, index) => (
-                    <div key={step} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-300 font-semibold text-slate-950">{index + 1}</div>
-                      <p className="text-sm leading-6 text-slate-300">{step}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+        <nav class="nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#consultant">Consultant</a>
+          <a href="#audit">Tech Audit</a>
+          <a href="#methodology">Methodology</a>
+          <a href="#kra">KRA</a>
+          <a href="#services">Services</a>
+          <a href="#results">Results</a>
+          <a href="#clients">Clients</a>
+          <a href="#training">Training</a>
+          <a href="#project">Project</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-            <section className="border-y border-white/10 bg-white/5">
-              <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-                <div className="mb-8">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Detailed Information</p>
-                  <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Expand sections for methodology, KRA, and training</h2>
-                  <p className="mt-4 max-w-3xl text-slate-300">To keep the homepage clean and easy to read, the following detailed sections are shown in expandable format.</p>
-                </div>
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <div class="pill">Trusted Dairy Plant Consulting Expertise</div>
+            <h1>
+              Turning dairy plants into
+              <span class="highlight">profitable, efficient operations</span>
+            </h1>
+            <p class="lead">
+              SSS DairyTech Consultants helps dairy plants improve production efficiency, quality systems,
+              product yield, laboratory practices, product flavour, texture, microbial quality, and profitability
+              through practical hands-on consulting.
+            </p>
 
-                <div className="space-y-4">
-                  <details id="methodology" className="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6 open:bg-slate-900/95" open>
-                    <summary className="cursor-pointer list-none text-xl font-semibold text-white">
-                      <div className="flex items-center justify-between gap-4">
-                        <span>Dairy Plant Improvement Methodology</span>
-                        <span className="text-cyan-300 transition group-open:rotate-180">⌄</span>
-                      </div>
-                    </summary>
-                    <p className="mt-4 max-w-3xl text-slate-300">The improvement methodology combines floor-level observation, KRA review, daily meetings, and Gemba-based action tracking to create measurable operational improvement in dairy plants.</p>
-                    <div className="mt-6 grid gap-4 md:grid-cols-2">
-                      {methodologyPoints.map((step, index) => (
-                        <div key={step} className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-300 font-semibold text-slate-950">{index + 1}</div>
-                          <p className="text-sm leading-6 text-slate-300">{step}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
+            <div class="hero-proof">
+              <p><strong>Visible results delivered in dairy plants:</strong></p>
+              <ul class="bullet-list">
+                <li>Raw milk MBRT improved from 30 minutes to 150 minutes.</li>
+                <li>Pouch milk MBRT improved from 5.45 hours to 7.45 hours.</li>
+                <li>Ghee grain and flavour improved through process optimisation.</li>
+                <li>Curd structure and taste improvement resulted in doubled sales.</li>
+              </ul>
+            </div>
 
-                  <details id="kra" className="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6">
-                    <summary className="cursor-pointer list-none text-xl font-semibold text-white">
-                      <div className="flex items-center justify-between gap-4">
-                        <span>Department-wise Key Result Areas</span>
-                        <span className="text-cyan-300 transition group-open:rotate-180">⌄</span>
-                      </div>
-                    </summary>
-                    <p className="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants supports dairy plants in defining practical KRAs across production, quality, procurement, maintenance, packing, CIP, and sanitation. This helps management align each department to measurable business results.</p>
-                    <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                      {kraDepartments.map((dept) => (
-                        <div key={dept.title} className="rounded-[1.5rem] border border-cyan-400/15 bg-cyan-400/5 p-5 shadow-lg shadow-black/20">
-                          <h3 className="text-lg font-semibold text-white">{dept.title}</h3>
-                          <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                            {dept.points.map((point) => (
-                              <li key={point} className="flex items-start gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-cyan-300" /><span>{point}</span></li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-
-                  <details id="training" className="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6">
-                    <summary className="cursor-pointer list-none text-xl font-semibold text-white">
-                      <div className="flex items-center justify-between gap-4">
-                        <span>Training Programs for Dairy Plant Staff</span>
-                        <span className="text-cyan-300 transition group-open:rotate-180">⌄</span>
-                      </div>
-                    </summary>
-
-                    <p className="mt-4 max-w-3xl text-slate-300">
-                      Structured hands-on training programs are available for dairy plant teams covering raw milk procurement, material balancing, processing, packing, maintenance, quality systems, CIP, sanitation, and operational control. Training is delivered as practical guidance for plant managers, supervisors, laboratory staff, procurement teams, maintenance teams, and quality personnel. Sessions are conducted using structured presentations supported by practical plant-level discussions.
-                    </p>
-
-                    <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
-                      <ul className="space-y-3 text-sm leading-6 text-slate-300">
-                        {trainingPrograms.map((item) => (
-                          <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </details>
-                </div>
-              </div>
-            </section>
-
-            <section id="services" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div className="mb-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Services</p>
-                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Professional consulting &amp; technical auditing for dairy plants</h2>
-              </div>
-              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {services.map((service) => (
-                  <div key={service.title} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20">
-                    <div className="mb-4 h-2 w-16 rounded-full bg-cyan-300" />
-                    <h3 className="text-lg font-semibold">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-300">{service.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section id="results" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div className="mb-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Key Achievements – A Few Illustrative Examples</p>
-                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Measured improvements delivered through practical implementation</h2>
-              </div>
-              <div className="grid gap-5 lg:grid-cols-3">
-                {achievements.map((item) => (
-                  <div key={item.title} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Achievement</p>
-                    <h3 className="mt-3 text-xl font-semibold">{item.title}</h3>
-                    <p className="mt-4 text-2xl font-bold text-white">{item.result}</p>
-                    <p className="mt-4 text-sm leading-6 text-slate-300">{item.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section id="clients" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div className="mb-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Client Engagements</p>
-                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Representative consulting assignments</h2>
-                <p className="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants has supported dairy plants across India and internationally in areas such as plant operations improvement, MBRT improvement, product quality enhancement, process optimisation, and dairy plant project advisory.</p>
-              </div>
-
-              <div className="grid gap-6 lg:grid-cols-3">
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <h3 className="text-lg font-semibold">Major Dairy Clients</h3>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                    {clientEngagements.majorClients.map((c) => (
-                      <li key={c} className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <h3 className="text-lg font-semibold">Online Technical Support</h3>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                    {clientEngagements.onlineSupport.map((c) => (
-                      <li key={c} className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <h3 className="text-lg font-semibold">New Dairy Projects</h3>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                    {clientEngagements.projects.map((c) => (
-                      <li key={c} className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section id="project" className="border-y border-white/10 bg-white/5">
-              <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Major Ongoing Project</p>
-                  <h2 className="mt-2 text-3xl font-bold sm:text-4xl">₹150 Crore fully automated integrated dairy plant</h2>
-                  <p className="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants is currently associated with a major dairy project involving the development of a fully automated integrated dairy processing plant. The project incorporates PLC-based process control and SCADA monitoring systems for efficient operation, product quality consistency, and operational reliability.</p>
-                  <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    {majorProjectProducts.map((item) => (
-                      <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-sm text-slate-300">{item}</div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
-                  <h3 className="text-xl font-semibold">Automation, Utilities &amp; Advisory Scope</h3>
-                  <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />PLC-based process control systems</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />SCADA-based plant monitoring and supervisory control</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Integrated automation across processing and utility systems</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Boiler, steam, refrigeration, compressed air, CIP, and electrical utility integration</li>
-                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Advisory support in project planning, process flow design, machinery selection, layout planning, and commissioning support</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section id="contact" className="mx-auto max-w-7xl px-4 py-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
-              <div className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-cyan-500/10 via-slate-900 to-blue-500/10 p-6 sm:p-8">
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex items-center gap-4 sm:gap-5">
-                    <ImageWithFallback
-                      src={logoSrc}
-                      alt="SSS DairyTech footer logo"
-                      className="h-14 w-14 rounded-2xl bg-white object-contain p-2 sm:h-16 sm:w-16"
-                      fallback={<span>Logo</span>}
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold sm:text-2xl">SSS DairyTech Consultants</h3>
-                      <p className="text-sm text-slate-300 sm:text-base">Consulting across India and internationally</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  {contactItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="group rounded-2xl border border-white/10 bg-slate-900/70 p-4 transition hover:border-cyan-300/60 hover:bg-slate-900"
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-200 group-hover:bg-cyan-300/20">
-                          {item.icon}
-                        </span>
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-200">{item.label}</p>
-                          <p className="mt-1 text-sm text-slate-200 sm:text-base">{item.value}</p>
-                        </div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            <div className="fixed bottom-0 left-0 right-0 z-30 border-t border-white/10 bg-slate-950/95 px-3 py-2 backdrop-blur lg:hidden">
-              <div className="grid grid-cols-6 gap-2 text-center text-[11px] text-slate-300">
-                <a href="#home" className="rounded-xl px-2 py-2 hover:bg-white/5">Home</a>
-                <a href="#consultant" className="rounded-xl px-2 py-2 hover:bg-white/5">About</a>
-                <a href="#audit" className="rounded-xl px-2 py-2 hover:bg-white/5">Audit</a>
-                <a href="#kra" className="rounded-xl px-2 py-2 hover:bg-white/5">KRA</a>
-                <a href="#clients" className="rounded-xl px-2 py-2 hover:bg-white/5">Clients</a>
-                <a href="#contact" className="rounded-xl px-2 py-2 hover:bg-white/5">Contact</a>
-              </div>
+            <div class="button-row">
+              <a class="btn btn-secondary" href="#kra">View Department KRAs</a>
+              <a class="btn btn-primary" href="#contact">Request Consultation</a>
+              <a class="btn btn-ghost" href="#training">View Training Programs</a>
             </div>
           </div>
-        );
-      }
 
-      ReactDOM.createRoot(document.getElementById("root")).render(<SSSDairyTechPreview />);
-    </script>
+          <aside class="hero-aside card">
+            <div class="hero-brand">
+              <img src="sss dairytech logo.png" alt="SSS DairyTech logo" />
+              <div>
+                <h3>SSS DairyTech Consultants</h3>
+                <p class="muted">Strategic business advisors for dairy plants.</p>
+              </div>
+            </div>
+
+            <div class="stat-grid">
+              <div class="stat-card">
+                <div class="stat-value">45+</div>
+                <div class="stat-label">Years of industry experience</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">30 → 150 min</div>
+                <div class="stat-label">Raw milk MBRT improvement</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">5.45 → 7.45 hrs</div>
+                <div class="stat-label">Pouch milk MBRT improvement</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">10–12%</div>
+                <div class="stat-label">Packing film yield improvement</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">Better grain &amp; flavour</div>
+                <div class="stat-label">Ghee quality improvement</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">Sales doubled</div>
+                <div class="stat-label">Curd taste and structure improvement</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="container section split-grid" id="consultant">
+        <article class="card">
+          <p class="section-kicker">About the Consultant</p>
+          <h2>Mr. S. Somasundaram</h2>
+          <img class="consultant-photo" src="somu photo new.jpg" alt="Mr. S. Somasundaram dairy consultant" />
+          <p class="section-intro">Senior Dairy Technologist &amp; Industry Professional.</p>
+          <div class="spaced muted">
+            <p>
+              Mr. S. Somasundaram is a senior dairy technologist and industry professional with over 45 years of
+              experience in the dairy sector. He is a Dairy Technologist from NDRI, Bangalore and an MBA postgraduate
+              with extensive hands-on experience in dairy plant operations, technical management, and dairy industry
+              consulting.
+            </p>
+            <p>
+              He has worked with major dairy organizations including Aavin for nearly three decades, served as Plant
+              Head at Heritage Foods India Ltd, and later as CEO of Vijay Dairy &amp; Farm Products Pvt Ltd, Trichy,
+              a dairy plant with a capacity of about 2 lakh litres per day including milk powder production.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Key Expertise</h3>
+          <ul class="bullet-list muted">
+            <li>Dairy plant technical auditing and performance improvement.</li>
+            <li>Milk procurement system improvement and MBRT strengthening.</li>
+            <li>Material balance and yield optimization.</li>
+            <li>Quality systems implementation and microbial contamination control.</li>
+            <li>CIP system management, sanitation control, and chemical cost optimization.</li>
+            <li>Energy optimization, operational cost reduction, and daily Gemba meeting systems.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="container section" id="audit">
+        <p class="section-kicker">Dairy Plant Technical Audit Program</p>
+        <h2>Gap analysis and improvement roadmap for quality, yield, and operating cost</h2>
+        <p class="section-intro">
+          Technical auditing is a major consulting area of SSS DairyTech Consultants. The program studies plant
+          operations, identifies performance gaps, and recommends practical actions to improve quality consistency,
+          increase yield, and reduce cost of operations.
+        </p>
+
+        <div class="audit-grid">
+          <article class="mini-card"><span class="mini-index">1</span><div>Process and product flow assessment across the plant.</div></article>
+          <article class="mini-card"><span class="mini-index">2</span><div>Material balance study and identification of yield losses.</div></article>
+          <article class="mini-card"><span class="mini-index">3</span><div>Quality systems review including laboratory practices.</div></article>
+          <article class="mini-card"><span class="mini-index">4</span><div>Utility and energy performance evaluation for steam, refrigeration, power, and water.</div></article>
+          <article class="mini-card"><span class="mini-index">5</span><div>Cost of production analysis and operational loss identification.</div></article>
+          <article class="mini-card"><span class="mini-index">6</span><div>Department-wise KRA review and accountability mapping.</div></article>
+        </div>
+      </section>
+
+      <section class="container section">
+        <p class="section-kicker">Detailed Information</p>
+        <h2>Expandable sections for methodology, KRA, and training</h2>
+        <p class="section-intro">
+          To keep the homepage readable while preserving detail, the most extensive information is grouped in
+          expandable sections below.
+        </p>
+
+        <details id="methodology" open>
+          <summary>
+            <span class="details-heading"><span>Dairy Plant Improvement Methodology</span><span class="chevron">⌄</span></span>
+          </summary>
+          <div class="details-body">
+            <p class="muted">
+              The improvement methodology combines floor-level observation, KRA review, daily meetings, and Gemba-based
+              action tracking to create measurable operational improvement in dairy plants.
+            </p>
+            <div class="two-col-grid">
+              <article class="mini-card"><span class="mini-index">1</span><div>Shop-floor observation and detailed line walkthrough.</div></article>
+              <article class="mini-card"><span class="mini-index">2</span><div>Review of production, quality, and dispatch records.</div></article>
+              <article class="mini-card"><span class="mini-index">3</span><div>Interaction and discussion with department heads and key personnel.</div></article>
+              <article class="mini-card"><span class="mini-index">4</span><div>Identification of deviations, operational gaps, and root causes.</div></article>
+              <article class="mini-card"><span class="mini-index">5</span><div>Daily Gemba meetings to resolve issues and improve inter-department coordination.</div></article>
+              <article class="mini-card"><span class="mini-index">6</span><div>Preparation of action plans with responsibilities and timelines.</div></article>
+              <article class="mini-card"><span class="mini-index">7</span><div>Follow-up review of corrective actions and performance improvement.</div></article>
+            </div>
+          </div>
+        </details>
+
+        <details id="kra">
+          <summary>
+            <span class="details-heading"><span>Department-wise Key Result Areas</span><span class="chevron">⌄</span></span>
+          </summary>
+          <div class="details-body">
+            <p class="muted">
+              SSS DairyTech Consultants supports dairy plants in defining practical KRAs across production, quality,
+              procurement, maintenance, packing, CIP, and sanitation.
+            </p>
+            <div class="services-grid">
+              <article class="service-card"><h3>Production – Milk</h3><ul class="plain-list muted"><li>Cost control</li><li>Production efficiency</li><li>Product quality</li><li>Employee motivation</li></ul></article>
+              <article class="service-card"><h3>Production – By Products</h3><ul class="plain-list muted"><li>Cost control</li><li>Production efficiency</li><li>Product quality</li><li>Employee motivation</li></ul></article>
+              <article class="service-card"><h3>Maintenance</h3><ul class="plain-list muted"><li>Equipment reliability</li><li>Energy consumption</li><li>Cost controls</li><li>Preventive maintenance schedules</li></ul></article>
+              <article class="service-card"><h3>Procurement</h3><ul class="plain-list muted"><li>Farm feed management</li><li>VLCC performance</li><li>MBRT standards</li><li>Volume procurement</li></ul></article>
+              <article class="service-card"><h3>Quality Assurance</h3><ul class="plain-list muted"><li>Quality control</li><li>Testing efficiency</li><li>Training</li><li>Complaint reduction</li></ul></article>
+              <article class="service-card"><h3>Packing &amp; Dispatch</h3><ul class="plain-list muted"><li>On-time dispatch</li><li>Cold chain effectiveness</li><li>Correct quantity</li><li>Safety system</li></ul></article>
+              <article class="service-card"><h3>CIP System</h3><ul class="plain-list muted"><li>CIP effectiveness</li><li>Chemical concentration control</li><li>Cleaning cycle discipline</li><li>Hygiene assurance</li></ul></article>
+              <article class="service-card"><h3>Plant Sanitation &amp; Hygiene</h3><ul class="plain-list muted"><li>Equipment sanitation</li><li>Plant hygiene standards</li><li>Microbial risk control</li><li>Cleaning verification</li></ul></article>
+              <article class="service-card"><h3>Stores</h3><ul class="plain-list muted"><li>Minimum and safety stock control</li><li>FIFO implementation</li><li>Inventory accuracy and verification</li><li>Reduced stock value and excess inventory</li><li>Disposal of slow-moving stock</li></ul></article>
+              <article class="service-card"><h3>Purchase</h3><ul class="plain-list muted"><li>Vendor qualification</li><li>Cost negotiation and benchmarking</li><li>Timely procurement</li><li>Material quality compliance</li><li>Coordination with stores</li></ul></article>
+            </div>
+          </div>
+        </details>
+
+        <details id="training">
+          <summary>
+            <span class="details-heading"><span>Training Programs for Dairy Plant Staff</span><span class="chevron">⌄</span></span>
+          </summary>
+          <div class="details-body">
+            <p class="muted">
+              Structured hands-on programs are available for dairy plant managers, supervisors, laboratory staff,
+              procurement teams, maintenance teams, and quality personnel.
+            </p>
+            <div class="card" style="padding: 22px; margin-top: 16px; box-shadow: none;">
+              <ul class="service-list muted">
+                <li>Raw milk procurement improvement and MBRT improvement program.</li>
+                <li>Material balancing from milk payment to milk receipt and processing.</li>
+                <li>Process milk training for aroma and process consistency.</li>
+                <li>Good Manufacturing Practices for dairy plants.</li>
+                <li>Yield improvement across milk processing operations.</li>
+                <li>Supervisor training on process flow and critical operations.</li>
+                <li>Packing section training for film yield improvement and loss control.</li>
+                <li>Selection of packing film suppliers and purchase order requirements.</li>
+                <li>Energy management in dairy plants.</li>
+                <li>Quality laboratory training on chemical and microbiological testing.</li>
+                <li>Compliance with BIS and FSSAI quality standards.</li>
+                <li>Control of microbial contamination in dairy plants.</li>
+                <li>Line study techniques to identify contamination sources.</li>
+                <li>CIP system management and chemical selection based on water quality.</li>
+                <li>Development and implementation of SOPs for dairy plant operations.</li>
+                <li>New dairy product development including standardization and pilot trials.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section class="container section" id="services">
+        <p class="section-kicker">Services</p>
+        <h2>Professional consulting and technical auditing for dairy plants</h2>
+        <div class="services-grid">
+          <article class="service-card"><div class="service-bar"></div><h3>Technical Auditing of Dairy Plants</h3><p class="muted">Detailed plant assessment covering process flow, material balance, yield loss points, quality gaps, utility performance, and cost reduction opportunities with a practical improvement roadmap.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>Dairy Plant Process Optimization</h3><p class="muted">Improvement of processing parameters, product flow, equipment utilization, and shop-floor discipline to achieve better consistency, lower losses, and smoother daily operations.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>Yield Improvement for Butter, Ghee &amp; Paneer</h3><p class="muted">Focused technical support to improve fat recovery, moisture control, process handling, and product standardization for better yield and profitability.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>Quality Systems &amp; Laboratory SOPs</h3><p class="muted">Development and strengthening of laboratory systems, testing discipline, documentation, and quality control procedures aligned with dairy plant requirements.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>SOP Development &amp; Implementation</h3><p class="muted">Preparation of clear SOPs for production, quality, sanitation, packing, utilities, and handling operations with hands-on implementation support.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>New Dairy Plant Advisory</h3><p class="muted">End-to-end advisory for new dairy projects including planning, process selection, utility integration, vendor coordination, installation review, and commissioning support.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>ERP for Milk Procurement &amp; Tracking</h3><p class="muted">Support in structuring procurement monitoring systems for better tracking of quantity, quality, payment accuracy, route control, and procurement efficiency.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>Energy &amp; Operational Efficiency</h3><p class="muted">Assessment of steam, refrigeration, electrical power, compressed air, water, and utilities to identify practical measures for reducing operating cost.</p></article>
+          <article class="service-card"><div class="service-bar"></div><h3>New Dairy Product Development</h3><p class="muted">Consulting support for concept development, formulation, process standardization, pilot trials, stability improvement, and commercialization.</p></article>
+        </div>
+      </section>
+
+      <section class="container section" id="results">
+        <p class="section-kicker">Key Achievements</p>
+        <h2>Measured improvements delivered through practical implementation</h2>
+        <div class="results-grid">
+          <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Ice Cream Plant Installation</h3><div class="achievement-result">1000 litre/day plant</div><p class="muted">Successful installation and commissioning of a 1000 LPD ice cream plant producing natural and regular ice creams including cones, cups, family packs, kulfi varieties, and special flavours.</p></article>
+          <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Raw Milk MBRT Improvement</h3><div class="achievement-result">30 min → 150 min</div><p class="muted">Improved raw milk quality through procurement discipline, MBRT monitoring, and hygiene control at collection level.</p></article>
+          <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Pouch Milk MBRT Improvement</h3><div class="achievement-result">5.45 hrs → 7.45 hrs</div><p class="muted">Enhanced processing hygiene, CIP effectiveness, and packing line sanitation to improve microbial quality of pouch milk.</p></article>
+          <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Ghee Grain &amp; Flavour Improvement</h3><div class="achievement-result">Product quality uplift</div><p class="muted">Optimized ghee processing parameters to improve grain formation and flavour, resulting in stronger consumer acceptance.</p></article>
+          <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Curd Structure &amp; Taste Improvement</h3><div class="achievement-result">Sales doubled</div><p class="muted">Improved fermentation control and culture management leading to better body, texture, and taste with significantly increased market demand.</p></article>
+          <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Packing Film Yield Improvement</h3><div class="achievement-result">10–12% improvement</div><p class="muted">Reduced packing losses and improved material utilization through operational control.</p></article>
+        </div>
+      </section>
+
+      <section class="container section" id="clients">
+        <p class="section-kicker">Client Engagements</p>
+        <h2>Representative consulting assignments</h2>
+        <p class="section-intro">SSS DairyTech Consultants has supported dairy plants across India and internationally in areas such as plant operations improvement, MBRT improvement, product quality enhancement, process optimisation, and dairy plant project advisory.</p>
+        <div class="clients-grid">
+          <article class="client-card"><h3>Major Dairy Clients</h3><ul class="plain-list muted"><li>VKA Milk – Karur</li><li>Sri Mahalalakshmi Dairy – Aroma Milk, Coimbatore</li><li>Winner Dairy – Rusi Milk, Pondicherry</li><li>Amrut Dairy – Pollachi</li><li>Ruby Milk – Madurai</li><li>SMD Milk – Erode</li><li>Jallikattu Milk – RKR Dairy Products</li><li>SNP Milk – Madurai</li></ul></article>
+          <article class="client-card"><h3>Online Technical Support</h3><ul class="plain-list muted"><li>Sandeep Paneer – Mysore</li><li>Mastany Lassi – Khandwa, Madhya Pradesh</li><li>Fish Tail Dairy – Pokhara, Nepal</li><li>Alvas Dairy – Singapore</li><li>Velan Foods – Madurai</li></ul></article>
+          <article class="client-card"><h3>New Dairy Projects</h3><ul class="plain-list muted"><li>VKA Dairy Karur – 300,000 LPD fully automated multi-product dairy plant</li></ul></article>
+        </div>
+      </section>
+
+      <section class="container section project-grid" id="project">
+        <article class="card">
+          <p class="section-kicker">Major Ongoing Project</p>
+          <h2>₹150 Crore fully automated integrated dairy plant</h2>
+          <p class="section-intro">SSS DairyTech Consultants is currently associated with a major dairy project involving the development of a fully automated integrated dairy processing plant with PLC-based process control and SCADA monitoring systems.</p>
+          <div class="project-points">
+            <div class="project-chip">Milk pouch packing</div>
+            <div class="project-chip">Sterilized milk processing</div>
+            <div class="project-chip">Milk powder production</div>
+            <div class="project-chip">Butter production</div>
+            <div class="project-chip">Ghee manufacturing</div>
+            <div class="project-chip">Yogurt / fermented milk products</div>
+            <div class="project-chip">Paneer production</div>
+            <div class="project-chip">Ice cream production</div>
+            <div class="project-chip">Curd production in pouch, cup, and bucket packs</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Automation, Utilities &amp; Advisory Scope</h3>
+          <ul class="bullet-list muted">
+            <li>PLC-based process control systems.</li>
+            <li>SCADA-based plant monitoring and supervisory control.</li>
+            <li>Integrated automation across processing and utility systems.</li>
+            <li>Boiler, steam, refrigeration, compressed air, CIP, and electrical utility integration.</li>
+            <li>Advisory support in project planning, process flow design, machinery selection, layout planning, and commissioning support.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="container section" id="contact">
+        <div class="contact-wrap card">
+          <div class="contact-header">
+            <img src="sss dairytech logo.png" alt="SSS DairyTech footer logo" />
+            <div>
+              <h2 style="margin-bottom: 6px;">SSS DairyTech Consultants</h2>
+              <p class="section-intro" style="margin-bottom: 0;">Consulting across India and internationally.</p>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <a class="contact-card" href="tel:+919944427435">
+              <strong>Mobile</strong>
+              <span>+91-9944427435, +91-9443575974</span>
+            </a>
+            <a class="contact-card" href="mailto:sssdairytech@gmail.com">
+              <strong>Email</strong>
+              <span>sssdairytech@gmail.com</span>
+            </a>
+            <a class="contact-card" href="https://maps.google.com/?q=Sundaranivas%2C%2014%20Vallal%20Alagappar%20Street%2C%20Navarathina%20Nagar%2C%20Karaikudi%20630002%2C%20Tamilnadu%2C%20India">
+              <strong>Address</strong>
+              <span>Sundaranivas, 14 Vallal Alagappar Street, Navarathina Nagar, Karaikudi - 630 002, Tamilnadu, India</span>
+            </a>
+            <div class="contact-card">
+              <strong>Focus Areas</strong>
+              <span>Technical audit, process optimization, yield improvement, SOPs, training, quality systems, and new dairy project advisory.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="#home">Home</a>
+      <a href="#consultant">About</a>
+      <a href="#audit">Audit</a>
+      <a href="#kra">KRA</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </body>
 </html>
