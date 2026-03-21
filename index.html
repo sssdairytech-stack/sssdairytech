@@ -15,18 +15,18 @@
     <script type="text/babel">
       const { useState } = React;
 
-      function ImageWithFallback({ src, alt, class, fallback }) {
+      function ImageWithFallback({ src, alt, className, fallback }) {
         const [hasError, setHasError] = useState(false);
 
         if (!src || hasError) {
           return (
-            <div class={`flex items-center justify-center ${class} bg-white/10 text-center text-xs text-slate-300`}>
+            <div className={`flex items-center justify-center ${className} bg-white/10 text-center text-xs text-slate-300`}>
               {fallback}
             </div>
           );
         }
 
-        return <img src={src} alt={alt} class={class} onError={() => setHasError(true)} />;
+        return <img src={src} alt={alt} className={className} onError={() => setHasError(true)} />;
       }
 
       function SSSDairyTechPreview() {
@@ -39,7 +39,7 @@
             value: "+91-9944427435, +91- 9443575974",
             href: "tel:+919944427435",
             icon: (
-              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.85 19.85 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.85 19.85 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.77.68 2.6a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.47-1.24a2 2 0 0 1 2.11-.45c.83.33 1.7.56 2.6.68A2 2 0 0 1 22 16.92z" />
               </svg>
             ),
@@ -49,7 +49,7 @@
             value: "sssdairytech@gmail.com",
             href: "mailto:sssdairytech@gmail.com",
             icon: (
-              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <polyline points="3 7 12 13 21 7" />
               </svg>
@@ -60,7 +60,7 @@
             value: "Sundaranivas, 14 Vallal Alagappar Street, Navarathina Nagar, Karaikudi - 630 002, Tamilnadu, India",
             href: "https://maps.google.com/?q=Sundaranivas%2C%2014%20Vallal%20Alagappar%20Street%2C%20Navarathina%20Nagar%2C%20Karaikudi%20630002%2C%20Tamilnadu%2C%20India",
             icon: (
-              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
@@ -320,93 +320,93 @@
         }
 
         return (
-          <div class="min-h-screen bg-slate-950 text-white">
-            <header class="sticky top-0 z-30 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-              <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-                <div class="flex items-center gap-3">
+          <div className="min-h-screen bg-slate-950 text-white">
+            <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/90 backdrop-blur">
+              <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+                <div className="flex items-center gap-3">
                   <ImageWithFallback
                     src={logoSrc}
                     alt="SSS DairyTech Consultants logo"
-                    class="h-12 w-12 rounded-full bg-white object-contain p-1 sm:h-14 sm:w-14"
-                    fallback={<span class="px-2">Logo</span>}
+                    className="h-12 w-12 rounded-full bg-white object-contain p-1 sm:h-14 sm:w-14"
+                    fallback={<span className="px-2">Logo</span>}
                   />
                   <div>
-                    <p class="text-sm font-semibold tracking-[0.2em] text-cyan-300">SSS DAIRY TECH</p>
-                    <p class="text-xs text-slate-300 sm:text-sm">Consultants</p>
+                    <p className="text-sm font-semibold tracking-[0.2em] text-cyan-300">SSS DAIRY TECH</p>
+                    <p className="text-xs text-slate-300 sm:text-sm">Consultants</p>
                   </div>
                 </div>
 
-                <nav class="hidden flex-wrap gap-5 text-sm text-slate-300 lg:flex">
-                  <a href="#home" class="hover:text-white">Home</a>
-                  <a href="#consultant" class="hover:text-white">Consultant</a>
-                  <a href="#audit" class="hover:text-white">Tech Audit</a>
-                  <a href="#methodology" class="hover:text-white">Methodology</a>
-                  <a href="#kra" class="hover:text-white">KRA</a>
-                  <a href="#services" class="hover:text-white">Services</a>
-                  <a href="#results" class="hover:text-white">Results</a>
-                  <a href="#clients" class="hover:text-white">Clients</a>
-                  <a href="#training" class="hover:text-white">Training</a>
-                  <a href="#project" class="hover:text-white">Project</a>
-                  <a href="#contact" class="hover:text-white">Contact</a>
+                <nav className="hidden flex-wrap gap-5 text-sm text-slate-300 lg:flex">
+                  <a href="#home" className="hover:text-white">Home</a>
+                  <a href="#consultant" className="hover:text-white">Consultant</a>
+                  <a href="#audit" className="hover:text-white">Tech Audit</a>
+                  <a href="#methodology" className="hover:text-white">Methodology</a>
+                  <a href="#kra" className="hover:text-white">KRA</a>
+                  <a href="#services" className="hover:text-white">Services</a>
+                  <a href="#results" className="hover:text-white">Results</a>
+                  <a href="#clients" className="hover:text-white">Clients</a>
+                  <a href="#training" className="hover:text-white">Training</a>
+                  <a href="#project" className="hover:text-white">Project</a>
+                  <a href="#contact" className="hover:text-white">Contact</a>
                 </nav>
               </div>
             </header>
 
-            <section id="home" class="relative overflow-hidden">
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.18),transparent_30%)]" />
-              <div class="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
-                <div class="flex flex-col justify-center">
-                  <div class="mb-5 inline-flex w-fit items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200">
+            <section id="home" className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.18),transparent_30%)]" />
+              <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
+                <div className="flex flex-col justify-center">
+                  <div className="mb-5 inline-flex w-fit items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200">
                     Trusted Dairy Plant Consulting Expertise
                   </div>
 
-                  <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                    Turning dairy plants into <span class="text-cyan-300">profitable, efficient operations</span>
+                  <h1 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                    Turning dairy plants into <span className="text-cyan-300">profitable, efficient operations</span>
                   </h1>
 
-                  <p class="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
+                  <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
                     SSS DairyTech Consultants helps dairy plants improve production efficiency, quality systems,
                     product yield, laboratory practices, product flavour, texture, microbial quality, and profitability
                     through practical hands-on consulting.
                   </p>
 
-                  <div class="mt-6 rounded-[1.5rem] border border-cyan-400/20 bg-cyan-400/5 p-4 text-sm text-slate-300">
-                    <p class="font-semibold text-white">Visible results delivered in dairy plants:</p>
-                    <ul class="mt-3 space-y-2">
-                      <li class="flex gap-2"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Raw milk MBRT improved from 30 minutes to 150 minutes</span></li>
-                      <li class="flex gap-2"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Pouch milk MBRT improved from 5.45 hours to 7.45 hours</span></li>
-                      <li class="flex gap-2"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Ghee grain and flavour improved through process optimisation</span></li>
-                      <li class="flex gap-2"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Curd structure and taste improvement resulted in doubling the sales</span></li>
+                  <div className="mt-6 rounded-[1.5rem] border border-cyan-400/20 bg-cyan-400/5 p-4 text-sm text-slate-300">
+                    <p className="font-semibold text-white">Visible results delivered in dairy plants:</p>
+                    <ul className="mt-3 space-y-2">
+                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Raw milk MBRT improved from 30 minutes to 150 minutes</span></li>
+                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Pouch milk MBRT improved from 5.45 hours to 7.45 hours</span></li>
+                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Ghee grain and flavour improved through process optimisation</span></li>
+                      <li className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" /><span>Curd structure and taste improvement resulted in doubling the sales</span></li>
                     </ul>
                   </div>
 
-                  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="#kra" class="rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-6 py-3 text-center font-semibold text-cyan-100 transition hover:bg-cyan-300/20">View Department KRAs</a>
-                    <a href="#contact" class="rounded-2xl bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-300">Request Consultation</a>
-                    <a href="#training" class="rounded-2xl border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:bg-white/5">View Training Programs</a>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="#kra" className="rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-6 py-3 text-center font-semibold text-cyan-100 transition hover:bg-cyan-300/20">View Department KRAs</a>
+                    <a href="#contact" className="rounded-2xl bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-300">Request Consultation</a>
+                    <a href="#training" className="rounded-2xl border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:bg-white/5">View Training Programs</a>
                   </div>
                 </div>
 
-                <div class="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-                  <div class="rounded-[1.5rem] bg-slate-900 p-6">
-                    <div class="mb-6 flex items-center gap-4">
+                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-950/30 backdrop-blur">
+                  <div className="rounded-[1.5rem] bg-slate-900 p-6">
+                    <div className="mb-6 flex items-center gap-4">
                       <ImageWithFallback
                         src={logoSrc}
                         alt="SSS DairyTech logo large"
-                        class="h-20 w-20 rounded-2xl bg-white object-contain p-2"
-                        fallback={<span class="px-2">Logo</span>}
+                        className="h-20 w-20 rounded-2xl bg-white object-contain p-2"
+                        fallback={<span className="px-2">Logo</span>}
                       />
                       <div>
-                        <p class="text-xl font-semibold">SSS DairyTech Consultants</p>
-                        <p class="mt-1 text-sm text-slate-400">Strategic Business Advisors for Dairy Plants</p>
+                        <p className="text-xl font-semibold">SSS DairyTech Consultants</p>
+                        <p className="mt-1 text-sm text-slate-400">Strategic Business Advisors for Dairy Plants</p>
                       </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
+                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
                       {stats.map((item) => (
-                        <div key={item.label} class="rounded-2xl border border-white/10 bg-slate-800/80 p-4">
-                          <div class="text-xl font-bold text-cyan-300 sm:text-2xl">{item.value}</div>
-                          <div class="mt-1 text-xs leading-5 text-slate-300 sm:text-sm">{item.label}</div>
+                        <div key={item.label} className="rounded-2xl border border-white/10 bg-slate-800/80 p-4">
+                          <div className="text-xl font-bold text-cyan-300 sm:text-2xl">{item.value}</div>
+                          <div className="mt-1 text-xs leading-5 text-slate-300 sm:text-sm">{item.label}</div>
                         </div>
                       ))}
                     </div>
@@ -415,98 +415,98 @@
               </div>
             </section>
 
-            <section id="consultant" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <div class="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
-                  <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">About the Consultant</p>
-                  <h2 class="mt-2 text-3xl font-bold">Mr. S. Somasundaram</h2>
+            <section id="consultant" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+              <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">About the Consultant</p>
+                  <h2 className="mt-2 text-3xl font-bold">Mr. S. Somasundaram</h2>
                   <ImageWithFallback
                     src={photoSrc}
                     alt="Mr. S. Somasundaram dairy consultant"
-                    class="mt-4 h-auto w-56 rounded-2xl border border-white/10 object-cover"
-                    fallback={<span class="px-4 py-10">Consultant Photo</span>}
+                    className="mt-4 h-auto w-56 rounded-2xl border border-white/10 object-cover"
+                    fallback={<span className="px-4 py-10">Consultant Photo</span>}
                   />
-                  <p class="mt-4 text-lg text-slate-300">Senior Dairy Technologist &amp; Industry Professional</p>
-                  <p class="mt-4 text-sm leading-6 text-slate-300">Mr. S. Somasundaram is a senior dairy technologist and industry professional with over 45 years of experience in the dairy sector. He is a Dairy Technologist from NDRI, Bangalore and an MBA postgraduate with extensive hands-on experience in dairy plant operations, technical management, and dairy industry consulting.</p>
-                  <p class="mt-4 text-sm leading-6 text-slate-300">He has worked with major dairy organizations including Aavin for nearly three decades, served as Plant Head at Heritage Foods India Ltd, and later as CEO of Vijay Dairy &amp; Farm Products Pvt Ltd, Trichy, a dairy plant with a capacity of about 2 lakh litres per day including milk powder production.</p>
+                  <p className="mt-4 text-lg text-slate-300">Senior Dairy Technologist &amp; Industry Professional</p>
+                  <p className="mt-4 text-sm leading-6 text-slate-300">Mr. S. Somasundaram is a senior dairy technologist and industry professional with over 45 years of experience in the dairy sector. He is a Dairy Technologist from NDRI, Bangalore and an MBA postgraduate with extensive hands-on experience in dairy plant operations, technical management, and dairy industry consulting.</p>
+                  <p className="mt-4 text-sm leading-6 text-slate-300">He has worked with major dairy organizations including Aavin for nearly three decades, served as Plant Head at Heritage Foods India Ltd, and later as CEO of Vijay Dairy &amp; Farm Products Pvt Ltd, Trichy, a dairy plant with a capacity of about 2 lakh litres per day including milk powder production.</p>
                 </div>
 
-                <div class="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
-                  <h3 class="mb-4 text-2xl font-semibold">Key Expertise</h3>
-                  <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Dairy plant technical auditing and performance improvement</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Milk procurement system improvement and MBRT strengthening</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Material balance and yield optimization</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Quality systems implementation and microbial contamination control</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />CIP system management, sanitation control, and chemical cost optimization</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Energy optimization, operational cost reduction, and daily Gemba meeting systems</li>
+                <div className="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
+                  <h3 className="mb-4 text-2xl font-semibold">Key Expertise</h3>
+                  <ul className="space-y-3 text-sm text-slate-300">
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Dairy plant technical auditing and performance improvement</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Milk procurement system improvement and MBRT strengthening</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Material balance and yield optimization</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Quality systems implementation and microbial contamination control</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />CIP system management, sanitation control, and chemical cost optimization</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Energy optimization, operational cost reduction, and daily Gemba meeting systems</li>
                   </ul>
                 </div>
               </div>
             </section>
 
-            <section id="audit" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div class="mb-10">
-                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Dairy Plant Technical Audit Program</p>
-                <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Gap analysis and improvement roadmap for quality, yield, and operating cost</h2>
-                <p class="mt-4 max-w-3xl text-slate-300">Technical auditing is a major consulting area of SSS DairyTech Consultants. The program studies plant operations, identifies performance gaps, and recommends practical actions to improve quality consistency, increase yield, and reduce cost of operations.</p>
+            <section id="audit" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+              <div className="mb-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Dairy Plant Technical Audit Program</p>
+                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Gap analysis and improvement roadmap for quality, yield, and operating cost</h2>
+                <p className="mt-4 max-w-3xl text-slate-300">Technical auditing is a major consulting area of SSS DairyTech Consultants. The program studies plant operations, identifies performance gaps, and recommends practical actions to improve quality consistency, increase yield, and reduce cost of operations.</p>
               </div>
 
-              <div class="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-6">
-                <h3 class="text-xl font-semibold">Audit Focus Areas</h3>
-                <div class="mt-4 grid gap-3 lg:grid-cols-2">
+              <div className="rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-6">
+                <h3 className="text-xl font-semibold">Audit Focus Areas</h3>
+                <div className="mt-4 grid gap-3 lg:grid-cols-2">
                   {auditSteps.map((step, index) => (
-                    <div key={step} class="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
-                      <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-300 font-semibold text-slate-950">{index + 1}</div>
-                      <p class="text-sm leading-6 text-slate-300">{step}</p>
+                    <div key={step} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-300 font-semibold text-slate-950">{index + 1}</div>
+                      <p className="text-sm leading-6 text-slate-300">{step}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            <section class="border-y border-white/10 bg-white/5">
-              <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-                <div class="mb-8">
-                  <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Detailed Information</p>
-                  <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Expand sections for methodology, KRA, and training</h2>
-                  <p class="mt-4 max-w-3xl text-slate-300">To keep the homepage clean and easy to read, the following detailed sections are shown in expandable format.</p>
+            <section className="border-y border-white/10 bg-white/5">
+              <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+                <div className="mb-8">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Detailed Information</p>
+                  <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Expand sections for methodology, KRA, and training</h2>
+                  <p className="mt-4 max-w-3xl text-slate-300">To keep the homepage clean and easy to read, the following detailed sections are shown in expandable format.</p>
                 </div>
 
-                <div class="space-y-4">
-                  <details id="methodology" class="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6 open:bg-slate-900/95" open>
-                    <summary class="cursor-pointer list-none text-xl font-semibold text-white">
-                      <div class="flex items-center justify-between gap-4">
+                <div className="space-y-4">
+                  <details id="methodology" className="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6 open:bg-slate-900/95" open>
+                    <summary className="cursor-pointer list-none text-xl font-semibold text-white">
+                      <div className="flex items-center justify-between gap-4">
                         <span>Dairy Plant Improvement Methodology</span>
-                        <span class="text-cyan-300 transition group-open:rotate-180">⌄</span>
+                        <span className="text-cyan-300 transition group-open:rotate-180">⌄</span>
                       </div>
                     </summary>
-                    <p class="mt-4 max-w-3xl text-slate-300">The improvement methodology combines floor-level observation, KRA review, daily meetings, and Gemba-based action tracking to create measurable operational improvement in dairy plants.</p>
-                    <div class="mt-6 grid gap-4 md:grid-cols-2">
+                    <p className="mt-4 max-w-3xl text-slate-300">The improvement methodology combines floor-level observation, KRA review, daily meetings, and Gemba-based action tracking to create measurable operational improvement in dairy plants.</p>
+                    <div className="mt-6 grid gap-4 md:grid-cols-2">
                       {methodologyPoints.map((step, index) => (
-                        <div key={step} class="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-                          <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-300 font-semibold text-slate-950">{index + 1}</div>
-                          <p class="text-sm leading-6 text-slate-300">{step}</p>
+                        <div key={step} className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-300 font-semibold text-slate-950">{index + 1}</div>
+                          <p className="text-sm leading-6 text-slate-300">{step}</p>
                         </div>
                       ))}
                     </div>
                   </details>
 
-                  <details id="kra" class="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6">
-                    <summary class="cursor-pointer list-none text-xl font-semibold text-white">
-                      <div class="flex items-center justify-between gap-4">
+                  <details id="kra" className="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6">
+                    <summary className="cursor-pointer list-none text-xl font-semibold text-white">
+                      <div className="flex items-center justify-between gap-4">
                         <span>Department-wise Key Result Areas</span>
-                        <span class="text-cyan-300 transition group-open:rotate-180">⌄</span>
+                        <span className="text-cyan-300 transition group-open:rotate-180">⌄</span>
                       </div>
                     </summary>
-                    <p class="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants supports dairy plants in defining practical KRAs across production, quality, procurement, maintenance, packing, CIP, and sanitation. This helps management align each department to measurable business results.</p>
-                    <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                    <p className="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants supports dairy plants in defining practical KRAs across production, quality, procurement, maintenance, packing, CIP, and sanitation. This helps management align each department to measurable business results.</p>
+                    <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                       {kraDepartments.map((dept) => (
-                        <div key={dept.title} class="rounded-[1.5rem] border border-cyan-400/15 bg-cyan-400/5 p-5 shadow-lg shadow-black/20">
-                          <h3 class="text-lg font-semibold text-white">{dept.title}</h3>
-                          <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                        <div key={dept.title} className="rounded-[1.5rem] border border-cyan-400/15 bg-cyan-400/5 p-5 shadow-lg shadow-black/20">
+                          <h3 className="text-lg font-semibold text-white">{dept.title}</h3>
+                          <ul className="mt-4 space-y-2 text-sm text-slate-300">
                             {dept.points.map((point) => (
-                              <li key={point} class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-cyan-300" /><span>{point}</span></li>
+                              <li key={point} className="flex items-start gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-cyan-300" /><span>{point}</span></li>
                             ))}
                           </ul>
                         </div>
@@ -514,23 +514,23 @@
                     </div>
                   </details>
 
-                  <details id="training" class="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6">
-                    <summary class="cursor-pointer list-none text-xl font-semibold text-white">
-                      <div class="flex items-center justify-between gap-4">
+                  <details id="training" className="group rounded-[1.75rem] border border-white/10 bg-slate-900 p-6">
+                    <summary className="cursor-pointer list-none text-xl font-semibold text-white">
+                      <div className="flex items-center justify-between gap-4">
                         <span>Training Programs for Dairy Plant Staff</span>
-                        <span class="text-cyan-300 transition group-open:rotate-180">⌄</span>
+                        <span className="text-cyan-300 transition group-open:rotate-180">⌄</span>
                       </div>
                     </summary>
 
-                    <p class="mt-4 max-w-3xl text-slate-300">
+                    <p className="mt-4 max-w-3xl text-slate-300">
                       Structured hands-on training programs are available for dairy plant teams covering raw milk procurement, material balancing, processing, packing, maintenance, quality systems, CIP, sanitation, and operational control. Training is delivered as practical guidance for plant managers, supervisors, laboratory staff, procurement teams, maintenance teams, and quality personnel. Sessions are conducted using structured presentations supported by practical plant-level discussions.
                     </p>
 
-                    <div class="mt-6 rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
-                      <ul class="space-y-3 text-sm leading-6 text-slate-300">
+                    <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+                      <ul className="space-y-3 text-sm leading-6 text-slate-300">
                         {trainingPrograms.map((item) => (
-                          <li key={item} class="flex items-start gap-3">
-                            <span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
+                          <li key={item} className="flex items-start gap-3">
+                            <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -541,133 +541,133 @@
               </div>
             </section>
 
-            <section id="services" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div class="mb-10">
-                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Services</p>
-                <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Professional consulting &amp; technical auditing for dairy plants</h2>
+            <section id="services" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+              <div className="mb-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Services</p>
+                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Professional consulting &amp; technical auditing for dairy plants</h2>
               </div>
-              <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {services.map((service) => (
-                  <div key={service.title} class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20">
-                    <div class="mb-4 h-2 w-16 rounded-full bg-cyan-300" />
-                    <h3 class="text-lg font-semibold">{service.title}</h3>
-                    <p class="mt-3 text-sm leading-6 text-slate-300">{service.description}</p>
+                  <div key={service.title} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20">
+                    <div className="mb-4 h-2 w-16 rounded-full bg-cyan-300" />
+                    <h3 className="text-lg font-semibold">{service.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-300">{service.description}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section id="results" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div class="mb-10">
-                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Key Achievements – A Few Illustrative Examples</p>
-                <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Measured improvements delivered through practical implementation</h2>
+            <section id="results" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+              <div className="mb-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Key Achievements – A Few Illustrative Examples</p>
+                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Measured improvements delivered through practical implementation</h2>
               </div>
-              <div class="grid gap-5 lg:grid-cols-3">
+              <div className="grid gap-5 lg:grid-cols-3">
                 {achievements.map((item) => (
-                  <div key={item.title} class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20">
-                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Achievement</p>
-                    <h3 class="mt-3 text-xl font-semibold">{item.title}</h3>
-                    <p class="mt-4 text-2xl font-bold text-white">{item.result}</p>
-                    <p class="mt-4 text-sm leading-6 text-slate-300">{item.detail}</p>
+                  <div key={item.title} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Achievement</p>
+                    <h3 className="mt-3 text-xl font-semibold">{item.title}</h3>
+                    <p className="mt-4 text-2xl font-bold text-white">{item.result}</p>
+                    <p className="mt-4 text-sm leading-6 text-slate-300">{item.detail}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section id="clients" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-              <div class="mb-10">
-                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Client Engagements</p>
-                <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Representative consulting assignments</h2>
-                <p class="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants has supported dairy plants across India and internationally in areas such as plant operations improvement, MBRT improvement, product quality enhancement, process optimisation, and dairy plant project advisory.</p>
+            <section id="clients" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+              <div className="mb-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Client Engagements</p>
+                <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Representative consulting assignments</h2>
+                <p className="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants has supported dairy plants across India and internationally in areas such as plant operations improvement, MBRT improvement, product quality enhancement, process optimisation, and dairy plant project advisory.</p>
               </div>
 
-              <div class="grid gap-6 lg:grid-cols-3">
-                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <h3 class="text-lg font-semibold">Major Dairy Clients</h3>
-                  <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <div className="grid gap-6 lg:grid-cols-3">
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                  <h3 className="text-lg font-semibold">Major Dairy Clients</h3>
+                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
                     {clientEngagements.majorClients.map((c) => (
-                      <li key={c} class="flex gap-2"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
+                      <li key={c} className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
                     ))}
                   </ul>
                 </div>
 
-                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <h3 class="text-lg font-semibold">Online Technical Support</h3>
-                  <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                  <h3 className="text-lg font-semibold">Online Technical Support</h3>
+                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
                     {clientEngagements.onlineSupport.map((c) => (
-                      <li key={c} class="flex gap-2"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
+                      <li key={c} className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
                     ))}
                   </ul>
                 </div>
 
-                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <h3 class="text-lg font-semibold">New Dairy Projects</h3>
-                  <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                  <h3 className="text-lg font-semibold">New Dairy Projects</h3>
+                  <ul className="mt-4 space-y-2 text-sm text-slate-300">
                     {clientEngagements.projects.map((c) => (
-                      <li key={c} class="flex gap-2"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
+                      <li key={c} className="flex gap-2"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />{c}</li>
                     ))}
                   </ul>
                 </div>
               </div>
             </section>
 
-            <section id="project" class="border-y border-white/10 bg-white/5">
-              <div class="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+            <section id="project" className="border-y border-white/10 bg-white/5">
+              <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
                 <div>
-                  <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Major Ongoing Project</p>
-                  <h2 class="mt-2 text-3xl font-bold sm:text-4xl">₹150 Crore fully automated integrated dairy plant</h2>
-                  <p class="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants is currently associated with a major dairy project involving the development of a fully automated integrated dairy processing plant. The project incorporates PLC-based process control and SCADA monitoring systems for efficient operation, product quality consistency, and operational reliability.</p>
-                  <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Major Ongoing Project</p>
+                  <h2 className="mt-2 text-3xl font-bold sm:text-4xl">₹150 Crore fully automated integrated dairy plant</h2>
+                  <p className="mt-4 max-w-3xl text-slate-300">SSS DairyTech Consultants is currently associated with a major dairy project involving the development of a fully automated integrated dairy processing plant. The project incorporates PLC-based process control and SCADA monitoring systems for efficient operation, product quality consistency, and operational reliability.</p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {majorProjectProducts.map((item) => (
-                      <div key={item} class="rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-sm text-slate-300">{item}</div>
+                      <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-sm text-slate-300">{item}</div>
                     ))}
                   </div>
                 </div>
 
-                <div class="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
-                  <h3 class="text-xl font-semibold">Automation, Utilities &amp; Advisory Scope</h3>
-                  <ul class="mt-4 space-y-3 text-sm text-slate-300">
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />PLC-based process control systems</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />SCADA-based plant monitoring and supervisory control</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Integrated automation across processing and utility systems</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Boiler, steam, refrigeration, compressed air, CIP, and electrical utility integration</li>
-                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Advisory support in project planning, process flow design, machinery selection, layout planning, and commissioning support</li>
+                <div className="rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-xl">
+                  <h3 className="text-xl font-semibold">Automation, Utilities &amp; Advisory Scope</h3>
+                  <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />PLC-based process control systems</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />SCADA-based plant monitoring and supervisory control</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Integrated automation across processing and utility systems</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Boiler, steam, refrigeration, compressed air, CIP, and electrical utility integration</li>
+                    <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />Advisory support in project planning, process flow design, machinery selection, layout planning, and commissioning support</li>
                   </ul>
                 </div>
               </div>
             </section>
 
-            <section id="contact" class="mx-auto max-w-7xl px-4 py-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
-              <div class="rounded-[2rem] border border-white/10 bg-gradient-to-r from-cyan-500/10 via-slate-900 to-blue-500/10 p-6 sm:p-8">
-                <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                  <div class="flex items-center gap-4 sm:gap-5">
+            <section id="contact" className="mx-auto max-w-7xl px-4 py-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
+              <div className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-cyan-500/10 via-slate-900 to-blue-500/10 p-6 sm:p-8">
+                <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                  <div className="flex items-center gap-4 sm:gap-5">
                     <ImageWithFallback
                       src={logoSrc}
                       alt="SSS DairyTech footer logo"
-                      class="h-14 w-14 rounded-2xl bg-white object-contain p-2 sm:h-16 sm:w-16"
+                      className="h-14 w-14 rounded-2xl bg-white object-contain p-2 sm:h-16 sm:w-16"
                       fallback={<span>Logo</span>}
                     />
                     <div>
-                      <h3 class="text-xl font-bold sm:text-2xl">SSS DairyTech Consultants</h3>
-                      <p class="text-sm text-slate-300 sm:text-base">Consulting across India and internationally</p>
+                      <h3 className="text-xl font-bold sm:text-2xl">SSS DairyTech Consultants</h3>
+                      <p className="text-sm text-slate-300 sm:text-base">Consulting across India and internationally</p>
                     </div>
                   </div>
                 </div>
 
-                <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   {contactItems.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
-                      class="group rounded-2xl border border-white/10 bg-slate-900/70 p-4 transition hover:border-cyan-300/60 hover:bg-slate-900"
+                      className="group rounded-2xl border border-white/10 bg-slate-900/70 p-4 transition hover:border-cyan-300/60 hover:bg-slate-900"
                     >
-                      <div class="flex items-start gap-3">
-                        <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-200 group-hover:bg-cyan-300/20">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-200 group-hover:bg-cyan-300/20">
                           {item.icon}
                         </span>
                         <div>
-                          <p class="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-200">{item.label}</p>
-                          <p class="mt-1 text-sm text-slate-200 sm:text-base">{item.value}</p>
+                          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-200">{item.label}</p>
+                          <p className="mt-1 text-sm text-slate-200 sm:text-base">{item.value}</p>
                         </div>
                       </div>
                     </a>
@@ -676,14 +676,14 @@
               </div>
             </section>
 
-            <div class="fixed bottom-0 left-0 right-0 z-30 border-t border-white/10 bg-slate-950/95 px-3 py-2 backdrop-blur lg:hidden">
-              <div class="grid grid-cols-6 gap-2 text-center text-[11px] text-slate-300">
-                <a href="#home" class="rounded-xl px-2 py-2 hover:bg-white/5">Home</a>
-                <a href="#consultant" class="rounded-xl px-2 py-2 hover:bg-white/5">About</a>
-                <a href="#audit" class="rounded-xl px-2 py-2 hover:bg-white/5">Audit</a>
-                <a href="#kra" class="rounded-xl px-2 py-2 hover:bg-white/5">KRA</a>
-                <a href="#clients" class="rounded-xl px-2 py-2 hover:bg-white/5">Clients</a>
-                <a href="#contact" class="rounded-xl px-2 py-2 hover:bg-white/5">Contact</a>
+            <div className="fixed bottom-0 left-0 right-0 z-30 border-t border-white/10 bg-slate-950/95 px-3 py-2 backdrop-blur lg:hidden">
+              <div className="grid grid-cols-6 gap-2 text-center text-[11px] text-slate-300">
+                <a href="#home" className="rounded-xl px-2 py-2 hover:bg-white/5">Home</a>
+                <a href="#consultant" className="rounded-xl px-2 py-2 hover:bg-white/5">About</a>
+                <a href="#audit" className="rounded-xl px-2 py-2 hover:bg-white/5">Audit</a>
+                <a href="#kra" className="rounded-xl px-2 py-2 hover:bg-white/5">KRA</a>
+                <a href="#clients" className="rounded-xl px-2 py-2 hover:bg-white/5">Clients</a>
+                <a href="#contact" className="rounded-xl px-2 py-2 hover:bg-white/5">Contact</a>
               </div>
             </div>
           </div>
