@@ -682,16 +682,16 @@
       }
 
       .mobile-nav {
-        position: sticky;
-        bottom: 0;
-        z-index: 45;
         display: none;
-        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 8px;
-        padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
-        border-top: 1px solid var(--line);
+        margin-bottom: 28px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
         background: rgba(2, 6, 23, 0.95);
         backdrop-filter: blur(12px);
+        box-shadow: var(--shadow);
       }
 
       .mobile-nav a {
@@ -821,58 +821,21 @@
 
     <main>
       <section class="hero" id="home">
+        <div class="container">
+          <nav class="mobile-nav" aria-label="Mobile">
+            <a href="#home">Home</a>
+            <a href="#why-choose-us">Why Choose</a>
+            <a href="#consultant">About</a>
+            <a href="#audit">Audit</a>
+            <a href="#kra">KRA</a>
+            <a href="#services">Services</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+
         <div class="container hero-grid">
           <div>
-            <section class="why-choose-panel" id="why-choose-us">
-              <div class="why-choose-header">
-                <p class="section-kicker" style="margin-bottom: 0;">Why Choose Us</p>
-                <span class="why-choose-badge">SSS Dairy Tech Advantage</span>
-              </div>
-              <h3>Why Clients Choose SSS Dairy Tech</h3>
-              <p class="section-intro" style="margin-bottom: 0;">
-                Trusted by dairy plants for practical, hands-on consulting that improves plant performance,
-                product quality, and long-term operational reliability.
-              </p>
-
-              <div class="why-choose-grid">
-                <article class="why-point">
-                  <span class="why-point-icon">✓</span>
-                  <div><strong>Over 45 years of dairy industry experience</strong></div>
-                </article>
-                <article class="why-point">
-                  <span class="why-point-icon">✓</span>
-                  <div><strong>Practical plant-level expertise and operational knowledge</strong></div>
-                </article>
-                <article class="why-point">
-                  <span class="why-point-icon">✓</span>
-                  <div><strong>Independent and unbiased technical advisory</strong></div>
-                </article>
-                <article class="why-point">
-                  <span class="why-point-icon">✓</span>
-                  <div><strong>Proven track record in improving plant performance</strong></div>
-                </article>
-                <article class="why-point">
-                  <span class="why-point-icon">✓</span>
-                  <div><strong>Support from project planning to plant operations</strong></div>
-                </article>
-              </div>
-
-              <div class="approach-section">
-                <p class="section-kicker" style="margin-bottom: 8px;">Our Approach</p>
-                <p class="muted" style="margin-bottom: 0;">
-                  SSS Dairy Tech combines technical expertise with practical industry experience to deliver
-                  solutions that are both technically sound and operationally feasible.
-                </p>
-
-                <div class="approach-grid">
-                  <article class="approach-card"><strong>Understanding client operational challenges</strong></article>
-                  <article class="approach-card"><strong>Identifying practical improvement opportunities</strong></article>
-                  <article class="approach-card"><strong>Implementing technically reliable solutions</strong></article>
-                  <article class="approach-card"><strong>Supporting long-term operational sustainability</strong></article>
-                </div>
-              </div>
-            </section>
-
             <div class="pill">Trusted Dairy Plant Consulting Expertise</div>
             <h1>
               Turning dairy plants into
@@ -1079,6 +1042,58 @@
         </details>
       </section>
 
+      <section class="container section" id="why-choose-us">
+        <div class="why-choose-panel" style="margin-bottom: 0;">
+          <div class="why-choose-header">
+            <p class="section-kicker" style="margin-bottom: 0;">Why Choose Us</p>
+            <span class="why-choose-badge">SSS Dairy Tech Advantage</span>
+          </div>
+          <h3>Why Clients Choose SSS Dairy Tech</h3>
+          <p class="section-intro" style="margin-bottom: 0;">
+            Trusted by dairy plants for practical, hands-on consulting that improves plant performance,
+            product quality, and long-term operational reliability.
+          </p>
+
+          <div class="why-choose-grid">
+            <article class="why-point">
+              <span class="why-point-icon">✓</span>
+              <div><strong>Over 45 years of dairy industry experience</strong></div>
+            </article>
+            <article class="why-point">
+              <span class="why-point-icon">✓</span>
+              <div><strong>Practical plant-level expertise and operational knowledge</strong></div>
+            </article>
+            <article class="why-point">
+              <span class="why-point-icon">✓</span>
+              <div><strong>Independent and unbiased technical advisory</strong></div>
+            </article>
+            <article class="why-point">
+              <span class="why-point-icon">✓</span>
+              <div><strong>Proven track record in improving plant performance</strong></div>
+            </article>
+            <article class="why-point">
+              <span class="why-point-icon">✓</span>
+              <div><strong>Support from project planning to plant operations</strong></div>
+            </article>
+          </div>
+
+          <div class="approach-section">
+            <p class="section-kicker" style="margin-bottom: 8px;">Our Approach</p>
+            <p class="muted" style="margin-bottom: 0;">
+              SSS Dairy Tech combines technical expertise with practical industry experience to deliver
+              solutions that are both technically sound and operationally feasible.
+            </p>
+
+            <div class="approach-grid">
+              <article class="approach-card"><strong>Understanding client operational challenges</strong></article>
+              <article class="approach-card"><strong>Identifying practical improvement opportunities</strong></article>
+              <article class="approach-card"><strong>Implementing technically reliable solutions</strong></article>
+              <article class="approach-card"><strong>Supporting long-term operational sustainability</strong></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="container section" id="services">
         <p class="section-kicker">Services</p>
         <h2>Professional consulting and technical auditing for dairy plants</h2>
@@ -1220,16 +1235,6 @@
       </section>
     </main>
 
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="#home">Home</a>
-      <a href="#why-choose-us">Why Choose</a>
-      <a href="#consultant">About</a>
-      <a href="#audit">Audit</a>
-      <a href="#kra">KRA</a>
-      <a href="#services">Services</a>
-      <a href="#clients">Clients</a>
-      <a href="#contact">Contact</a>
-    </nav>
     <script>
       const contactForm = document.getElementById("contact-form");
       const formStatus = document.getElementById("form-status");
