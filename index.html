@@ -696,6 +696,40 @@
         margin: 18px 0 22px;
       }
 
+      .featured-gallery {
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      .featured-gallery-panel {
+        padding: 20px;
+      }
+
+      .featured-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .featured-gallery-item {
+        overflow: hidden;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: var(--panel-soft);
+      }
+
+      .featured-gallery-item img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .featured-gallery-item figcaption {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        color: #cbd5e1;
+      }
+
       .mobile-nav {
         display: none;
         align-items: center;
@@ -805,6 +839,19 @@
         .hero-brand,
         .brand {
           align-items: flex-start;
+        }
+
+        .featured-gallery-panel {
+          padding: 16px;
+        }
+
+        .featured-gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .featured-gallery-item img {
+          aspect-ratio: 16 / 10;
         }
       }
     </style>
@@ -918,6 +965,25 @@
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section class="container section featured-gallery" aria-label="Improvement highlights">
+        <div class="card featured-gallery-panel">
+          <div class="featured-gallery-grid">
+            <figure class="featured-gallery-item">
+              <img src="MBRT improvement.jpg" alt="MBRT improvement in milk quality process" />
+              <figcaption>MBRT improvement</figcaption>
+            </figure>
+            <figure class="featured-gallery-item">
+              <img src="milk packing.jpg" alt="Milk packing line operations" />
+              <figcaption>Milk packing</figcaption>
+            </figure>
+            <figure class="featured-gallery-item">
+              <img src="curd pouches.jpg" alt="Curd pouches in production and packing area" />
+              <figcaption>Curd pouches</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
