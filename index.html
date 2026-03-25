@@ -754,6 +754,27 @@
         color: #cbd5e1;
       }
 
+      .audit-image-panel {
+        margin-top: 24px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--panel-soft);
+      }
+
+      .audit-image-grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .audit-image-grid img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 14px;
+      }
+
       .spaced > * + * {
         margin-top: 14px;
       }
@@ -776,6 +797,10 @@
         .contact-form-grid,
         .stat-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .audit-image-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .nav {
@@ -852,6 +877,15 @@
 
         .featured-gallery-item img {
           aspect-ratio: 16 / 10;
+        }
+
+        .audit-image-panel {
+          padding: 12px;
+        }
+
+        .audit-image-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
         }
       }
     </style>
@@ -1037,6 +1071,14 @@
           <article class="mini-card"><span class="mini-index">4</span><div>Utility and energy performance evaluation for steam, refrigeration, power, and water.</div></article>
           <article class="mini-card"><span class="mini-index">5</span><div>Cost of production analysis and operational loss identification.</div></article>
           <article class="mini-card"><span class="mini-index">6</span><div>Department-wise KRA review and accountability mapping.</div></article>
+        </div>
+
+        <div class="audit-image-panel" aria-label="Technical audit visual highlights">
+          <div class="audit-image-grid">
+            <img src="03_technical_audit_inspection.png" alt="Technical audit inspection at dairy plant" loading="lazy" decoding="async" />
+            <img src="lab testing.jpg" alt="Laboratory testing activities" loading="lazy" decoding="async" />
+            <img src="15_results_product_development.jpeg" alt="Results from product development improvements" loading="lazy" decoding="async" />
+          </div>
         </div>
       </section>
 
