@@ -826,6 +826,42 @@
         font-weight: 700;
       }
 
+      .training-highlight-strip {
+        margin-top: 20px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--panel-soft);
+      }
+
+      .training-highlight-grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .training-highlight-item {
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.72);
+      }
+
+      .training-highlight-item img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .training-highlight-item figcaption {
+        padding: 10px 12px;
+        color: #cbd5e1;
+        font-size: 0.9rem;
+        text-align: center;
+        font-weight: 700;
+      }
+
       .spaced > * + * {
         margin-top: 14px;
       }
@@ -855,6 +891,10 @@
         }
 
         .methodology-visual-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .training-highlight-grid {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
@@ -948,6 +988,15 @@
         }
 
         .methodology-visual-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .training-highlight-strip {
+          padding: 12px;
+        }
+
+        .training-highlight-grid {
           grid-template-columns: 1fr;
           gap: 10px;
         }
@@ -1259,6 +1308,23 @@
             </div>
           </div>
         </details>
+
+        <div class="training-highlight-strip" aria-label="Training visual highlights">
+          <div class="training-highlight-grid">
+            <figure class="training-highlight-item">
+              <img src="Training.jpg" alt="Training session for dairy plant staff" loading="lazy" decoding="async" />
+              <figcaption>Training</figcaption>
+            </figure>
+            <figure class="training-highlight-item">
+              <img src="Pasteurized-milk-processing-line.jpg" alt="Science of milk processing line" loading="lazy" decoding="async" />
+              <figcaption>Science of Milk</figcaption>
+            </figure>
+            <figure class="training-highlight-item">
+              <img src="16_training_classroom.jpeg" alt="HACCP training session for dairy team" loading="lazy" decoding="async" />
+              <figcaption>HACCP Training</figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="container section" id="why-choose-us">
