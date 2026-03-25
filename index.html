@@ -790,6 +790,42 @@
         font-weight: 700;
       }
 
+      .methodology-visual-panel {
+        margin-top: 22px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--panel-soft);
+      }
+
+      .methodology-visual-grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .methodology-visual-item {
+        margin: 0;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(15, 23, 42, 0.72);
+      }
+
+      .methodology-visual-item img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .methodology-visual-item figcaption {
+        padding: 10px 12px;
+        color: #cbd5e1;
+        font-size: 0.9rem;
+        text-align: center;
+        font-weight: 700;
+      }
+
       .spaced > * + * {
         margin-top: 14px;
       }
@@ -816,6 +852,10 @@
 
         .audit-image-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .methodology-visual-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .nav {
@@ -899,6 +939,15 @@
         }
 
         .audit-image-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .methodology-visual-panel {
+          padding: 12px;
+        }
+
+        .methodology-visual-grid {
           grid-template-columns: 1fr;
           gap: 10px;
         }
@@ -1135,6 +1184,22 @@
               <article class="mini-card"><span class="mini-index">5</span><div>Daily Gemba meetings to resolve issues and improve inter-department coordination.</div></article>
               <article class="mini-card"><span class="mini-index">6</span><div>Preparation of action plans with responsibilities and timelines.</div></article>
               <article class="mini-card"><span class="mini-index">7</span><div>Follow-up review of corrective actions and performance improvement.</div></article>
+            </div>
+            <div class="methodology-visual-panel" aria-label="Methodology tools and collaboration visuals">
+              <div class="methodology-visual-grid">
+                <figure class="methodology-visual-item">
+                  <img src="Fishbone-cause and effect analysis.png" alt="Fishbone cause and effect analysis board" loading="lazy" decoding="async" />
+                  <figcaption>Fishbone Cause and Effect Analysis</figcaption>
+                </figure>
+                <figure class="methodology-visual-item">
+                  <img src="gemba_meeting_with_gemba_board.png" alt="Gemba meeting with gemba board in dairy plant" loading="lazy" decoding="async" />
+                  <figcaption>Gemba Meeting with Gemba Board</figcaption>
+                </figure>
+                <figure class="methodology-visual-item">
+                  <img src="Resposiblity Matrix.png" alt="Responsibility matrix for department action tracking" loading="lazy" decoding="async" />
+                  <figcaption>Responsibility Matrix</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </details>
