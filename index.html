@@ -765,14 +765,29 @@
       .audit-image-grid {
         display: grid;
         gap: 14px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .audit-image-grid img {
+      .audit-image-item {
+        margin: 0;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(15, 23, 42, 0.72);
+      }
+
+      .audit-image-item img {
         width: 100%;
         aspect-ratio: 16 / 10;
         object-fit: cover;
-        border-radius: 14px;
+      }
+
+      .audit-image-item figcaption {
+        padding: 10px 12px;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        text-align: center;
+        font-weight: 700;
       }
 
       .spaced > * + * {
@@ -800,7 +815,7 @@
         }
 
         .audit-image-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .nav {
@@ -1075,9 +1090,22 @@
 
         <div class="audit-image-panel" aria-label="Technical audit visual highlights">
           <div class="audit-image-grid">
-            <img src="03_technical_audit_inspection.png" alt="Technical audit inspection at dairy plant" loading="lazy" decoding="async" />
-            <img src="lab testing.jpg" alt="Laboratory testing activities" loading="lazy" decoding="async" />
-            <img src="15_results_product_development.jpeg" alt="Results from product development improvements" loading="lazy" decoding="async" />
+            <figure class="audit-image-item">
+              <img src="03_technical_audit_inspection.png" alt="Tech audit inspection at dairy plant" loading="lazy" decoding="async" />
+              <figcaption>Tech Audit Inspection</figcaption>
+            </figure>
+            <figure class="audit-image-item">
+              <img src="lab testing.jpg" alt="Lab testing activities in dairy plant" loading="lazy" decoding="async" />
+              <figcaption>Lab Testing</figcaption>
+            </figure>
+            <figure class="audit-image-item">
+              <img src="Training discussions.jpg" alt="Training discussions with plant team" loading="lazy" decoding="async" />
+              <figcaption>Training Discussions</figcaption>
+            </figure>
+            <figure class="audit-image-item">
+              <img src="paneer production line.jpeg" alt="Paneer production process line" loading="lazy" decoding="async" />
+              <figcaption>Paneer Production</figcaption>
+            </figure>
           </div>
         </div>
       </section>
