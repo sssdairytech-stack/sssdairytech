@@ -506,6 +506,37 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .project-scope-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-scope-image {
+        margin: auto 0 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: rgba(15, 23, 42, 0.45);
+        overflow: hidden;
+      }
+
+      .project-scope-image img {
+        display: block;
+        width: 100%;
+        height: clamp(210px, 26vw, 300px);
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .project-scope-image figcaption {
+        padding: 10px 12px 12px;
+        border-top: 1px solid var(--line);
+        background: rgba(15, 23, 42, 0.75);
+        color: #bae6fd;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
       .form-field {
         display: flex;
         flex-direction: column;
@@ -1597,7 +1628,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card project-scope-card">
           <h3>Automation, Utilities &amp; Advisory Scope</h3>
           <ul class="bullet-list muted">
             <li>PLC-based process control systems.</li>
@@ -1606,6 +1637,10 @@
             <li>Boiler, steam, refrigeration, compressed air, CIP, and electrical utility integration.</li>
             <li>Advisory support in project planning, process flow design, machinery selection, layout planning, and commissioning support.</li>
           </ul>
+          <figure class="project-scope-image">
+            <img src="Automated Dairy production line.webp" alt="Automated dairy production line with integrated utility systems" loading="lazy" decoding="async" />
+            <figcaption>Automated Dairy production line</figcaption>
+          </figure>
         </article>
       </section>
 
