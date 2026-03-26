@@ -648,6 +648,33 @@
         margin-bottom: 18px;
       }
 
+      .service-card-featured {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+        gap: 18px;
+        align-items: center;
+      }
+
+      .service-card-featured .service-copy p {
+        margin: 0;
+      }
+
+      .service-image-wrap {
+        margin: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(15, 23, 42, 0.72);
+      }
+
+      .service-image-wrap img {
+        width: 100%;
+        height: 100%;
+        max-height: 260px;
+        object-fit: cover;
+        display: block;
+      }
+
       .achievement-result {
         margin: 16px 0;
         font-size: 1.85rem;
@@ -905,6 +932,14 @@
         .mobile-nav {
           display: flex;
         }
+
+        .service-card-featured {
+          grid-template-columns: 1fr;
+        }
+
+        .service-image-wrap img {
+          max-height: 220px;
+        }
       }
 
       @media (max-width: 720px) {
@@ -999,6 +1034,10 @@
         .training-highlight-grid {
           grid-template-columns: 1fr;
           gap: 10px;
+        }
+
+        .service-image-wrap img {
+          max-height: 200px;
         }
       }
     </style>
@@ -1383,7 +1422,16 @@
         <p class="section-kicker">Services</p>
         <h2>Professional consulting and technical auditing for dairy plants</h2>
         <div class="services-grid">
-          <article class="service-card"><div class="service-bar"></div><h3>Technical Auditing of Dairy Plants</h3><p class="muted">Detailed plant assessment covering process flow, material balance, yield loss points, quality gaps, utility performance, and cost reduction opportunities with a practical improvement roadmap.</p></article>
+          <article class="service-card service-card-featured">
+            <div class="service-copy">
+              <div class="service-bar"></div>
+              <h3>Technical Auditing of Dairy Plants</h3>
+              <p class="muted">Detailed plant assessment covering process flow, material balance, yield loss points, quality gaps, utility performance, and cost reduction opportunities with a practical improvement roadmap.</p>
+            </div>
+            <figure class="service-image-wrap">
+              <img src="Tech audit for Dairy plant.jpg" alt="Technical audit for dairy plant process review" loading="lazy" decoding="async" />
+            </figure>
+          </article>
           <article class="service-card"><div class="service-bar"></div><h3>Dairy Plant Process Optimization</h3><p class="muted">Improvement of processing parameters, product flow, equipment utilization, and shop-floor discipline to achieve better consistency, lower losses, and smoother daily operations.</p></article>
           <article class="service-card"><div class="service-bar"></div><h3>Yield Improvement for Butter, Ghee &amp; Paneer</h3><p class="muted">Focused technical support to improve fat recovery, moisture control, process handling, and product standardization for better yield and profitability.</p></article>
           <article class="service-card"><div class="service-bar"></div><h3>Quality Systems &amp; Laboratory SOPs</h3><p class="muted">Development and strengthening of laboratory systems, testing discipline, documentation, and quality control procedures aligned with dairy plant requirements.</p></article>
