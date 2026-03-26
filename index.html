@@ -649,14 +649,19 @@
       }
 
       .service-card-featured {
-        display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
-        gap: 18px;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
       }
 
       .service-card-featured .service-copy p {
         margin: 0;
+        max-width: 100%;
+      }
+
+      .service-card-featured .service-copy {
+        width: 100%;
       }
 
       .service-card-featured .service-copy ul {
@@ -669,6 +674,7 @@
       }
 
       .service-image-wrap {
+        width: 100%;
         margin: 0;
         border-radius: 16px;
         overflow: hidden;
@@ -678,8 +684,8 @@
 
       .service-image-wrap img {
         width: 100%;
-        height: 100%;
-        max-height: 260px;
+        height: auto;
+        max-height: 320px;
         object-fit: cover;
         display: block;
       }
@@ -940,10 +946,6 @@
 
         .mobile-nav {
           display: flex;
-        }
-
-        .service-card-featured {
-          grid-template-columns: 1fr;
         }
 
         .service-image-wrap img {
