@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <title>SSS DairyTech Consultants</title>
     <meta
       name="description"
@@ -38,6 +39,7 @@
 
       body {
         margin: 0;
+        overflow-x: hidden;
         font-family: Arial, Helvetica, sans-serif;
         background:
           radial-gradient(circle at top, rgba(6, 182, 212, 0.18), transparent 30%),
@@ -58,7 +60,7 @@
       }
 
       .container {
-        width: min(var(--max-width), calc(100% - 32px));
+        width: min(var(--max-width), calc(100% - clamp(20px, 4vw, 40px)));
         margin: 0 auto;
       }
 
@@ -111,12 +113,7 @@
         font-size: 0.92rem;
       }
 
-      .nav {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 8px;
+      .site-nav {
         font-size: 0.98rem;
         color: #cbd5e1;
         background: rgba(15, 23, 42, 0.78);
@@ -125,13 +122,20 @@
         padding: 8px;
       }
 
-      .nav::-webkit-scrollbar,
-      .mobile-nav::-webkit-scrollbar {
+      .site-nav.show,
+      .navbar-expand-xl .site-nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .site-nav::-webkit-scrollbar {
         display: none;
       }
 
-      .nav a,
-      .mobile-nav a {
+      .site-nav a {
         flex: 0 0 auto;
         white-space: nowrap;
         display: inline-flex;
@@ -139,19 +143,18 @@
         gap: 6px;
       }
 
-      .nav a {
+      .site-nav a {
         padding: 8px 10px;
         border-radius: 10px;
         border: 1px solid transparent;
         transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
       }
 
-      .nav a:hover,
-      .mobile-nav a:hover {
+      .site-nav a:hover {
         color: #fff;
       }
 
-      .nav a:hover {
+      .site-nav a:hover {
         background: rgba(34, 211, 238, 0.14);
         border-color: rgba(34, 211, 238, 0.28);
       }
@@ -182,7 +185,7 @@
       }
 
       .hero-grid {
-        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         align-items: start;
       }
 
@@ -403,7 +406,7 @@
 
       .button-row {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
         gap: 14px;
         margin-top: 28px;
@@ -411,7 +414,7 @@
 
       .hero-action-row {
         display: inline-flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         gap: 14px;
         margin-left: auto;
       }
@@ -541,7 +544,7 @@
 
       .split-grid,
       .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
 
       .audit-grid,
@@ -558,7 +561,7 @@
       .two-col-grid,
       .project-points,
       .contact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       }
 
       .contact-layout {
@@ -704,7 +707,7 @@
       .services-grid,
       .results-grid,
       .clients-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
 
       .mini-card {
@@ -949,7 +952,7 @@
       .results-highlight-grid {
         margin-top: 22px;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 16px;
       }
 
@@ -970,30 +973,6 @@
       .results-highlight-item figcaption {
         padding: 10px 12px;
         font-size: 0.9rem;
-        color: #cbd5e1;
-      }
-
-      .mobile-nav {
-        display: none;
-        align-items: center;
-        gap: 10px;
-        overflow-x: auto;
-        margin-bottom: 28px;
-        padding: 12px 14px;
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        background: rgba(2, 6, 23, 0.95);
-        backdrop-filter: blur(12px);
-        box-shadow: var(--shadow);
-        scrollbar-width: none;
-      }
-
-      .mobile-nav a {
-        padding: 12px 14px;
-        border-radius: 12px;
-        text-align: center;
-        font-size: 0.88rem;
-        font-weight: 700;
         color: #cbd5e1;
       }
 
@@ -1145,16 +1124,16 @@
           gap: 14px;
         }
 
-        .nav {
-          display: none;
-        }
-
-        .mobile-nav {
-          display: flex;
-        }
-
         .service-image-wrap img {
           max-height: 220px;
+        }
+      }
+
+      @media (max-width: 1199.98px) {
+        .site-nav.show {
+          margin-top: 12px;
+          justify-content: flex-start;
+          width: 100%;
         }
       }
 
@@ -1275,7 +1254,7 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="container header-inner">
+      <div class="container header-inner navbar navbar-expand-xl navbar-dark p-0">
         <a class="brand" href="#home" aria-label="SSS DairyTech Consultants home">
           <img src="sss dairytech logo.png" alt="SSS DairyTech Consultants logo" />
           <div>
@@ -1284,7 +1263,11 @@
           </div>
         </a>
 
-        <nav class="nav" aria-label="Primary">
+        <button class="navbar-toggler border-info-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="site-nav collapse navbar-collapse" id="mainNav" aria-label="Primary">
           <a href="#home">Home</a>
           <a href="#why-choose-us">Why Choose Us</a>
           <a href="#consultant">Consultant</a>
@@ -1303,19 +1286,6 @@
 
     <main>
       <section class="hero" id="home">
-        <div class="container">
-          <nav class="mobile-nav" aria-label="Mobile">
-            <a href="#home">Home</a>
-            <a href="#why-choose-us">Why Choose</a>
-            <a href="#consultant">About</a>
-            <a href="#audit">Audit</a>
-            <a href="#kra">KRA</a>
-            <a href="#services">Services</a>
-            <a href="#clients">Clients</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-
         <div class="container hero-grid">
           <div>
             <div class="pill">Trusted Dairy Plant Consulting Expertise</div>
@@ -2081,7 +2051,7 @@
         return svg;
       };
 
-      document.querySelectorAll(".nav a, .mobile-nav a").forEach((link) => {
+      document.querySelectorAll(".site-nav a").forEach((link) => {
         const target = link.getAttribute("href")?.replace("#", "");
         if (!target || !iconByTarget[target]) return;
 
@@ -2181,5 +2151,6 @@
         });
       }
     </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
