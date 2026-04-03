@@ -187,12 +187,10 @@
       }
 
       .home-hero-images {
-        margin: 10px auto 0;
+        margin: 0;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
-        max-width: 980px;
-        justify-items: center;
       }
 
       .home-hero-images img {
@@ -408,6 +406,25 @@
         flex-wrap: wrap;
         gap: 14px;
         margin-top: 28px;
+      }
+
+      .hero-action-row {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero-gallery-block {
+        width: min(980px, 100%);
+        margin: 0 auto;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .hero-gallery-wrap {
+        margin-top: 24px;
       }
 
       .btn {
@@ -1119,7 +1136,6 @@
         }
 
         .home-hero-images {
-          margin-top: 10px;
           gap: 14px;
         }
 
@@ -1181,6 +1197,11 @@
         }
 
         .button-row {
+          flex-direction: column;
+        }
+
+        .hero-action-row {
+          width: 100%;
           flex-direction: column;
         }
 
@@ -1309,8 +1330,10 @@
 
             <div class="button-row">
               <a class="btn btn-secondary" href="#kra">View Department KRAs</a>
-              <a class="btn btn-primary" href="#contact">Request Consultation</a>
-              <a class="btn btn-ghost" href="#training">View Training Programs</a>
+              <div class="hero-action-row">
+                <a class="btn btn-primary" href="#contact">Request Consultation</a>
+                <a class="btn btn-ghost" href="#training">View Training Programs</a>
+              </div>
             </div>
 
           </div>
@@ -1350,13 +1373,17 @@
                 <div class="stat-label">Curd taste and structure improvement</div>
               </div>
             </div>
+          </aside>
+        </div>
 
-            <div class="home-hero-images" aria-label="Home gallery">
+        <div class="container hero-gallery-wrap">
+          <div class="hero-gallery-block" aria-label="Home gallery">
+            <div class="home-hero-images">
               <img src="hero 1.jpg" alt="Dairy processing setup overview" loading="lazy" decoding="async" />
               <img src="hero2.jpg" alt="Modern dairy processing line" loading="lazy" decoding="async" />
               <img src="hero3" alt="Automated dairy plant operations" loading="lazy" decoding="async" />
             </div>
-          </aside>
+          </div>
         </div>
       </section>
 
