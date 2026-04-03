@@ -571,9 +571,12 @@
 
       .audit-grid,
       .two-col-grid,
-      .project-points,
-      .contact-grid {
+      .project-points {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .contact-layout {
@@ -952,6 +955,12 @@
 
       .contact-card-content {
         min-width: 0;
+      }
+
+      .contact-card-content span {
+        display: block;
+        line-height: 1.45;
+        overflow-wrap: break-word;
       }
 
       .contact-card,
@@ -1865,7 +1874,7 @@
                 </span>
                 <span class="contact-card-content">
                   <strong>Mobile</strong>
-                  <span>+91-9944427435, +91-9443575974</span>
+                  <span>+91-9944427435,<br />+91-9443575974</span>
                 </span>
               </a>
               <a class="contact-card" href="mailto:sssdairytech@gmail.com">
@@ -1877,7 +1886,7 @@
                 </span>
                 <span class="contact-card-content">
                   <strong>Email</strong>
-                  <span>sssdairytech@gmail.com</span>
+                  <span>sssdairytech<wbr />@gmail.com</span>
                 </span>
               </a>
               <a class="contact-card" href="https://maps.google.com/?q=Sundaranivas%2C%2014%20Vallal%20Alagappar%20Street%2C%20Navarathina%20Nagar%2C%20Karaikudi%20630002%2C%20Tamilnadu%2C%20India">
