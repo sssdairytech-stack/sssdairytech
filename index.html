@@ -165,7 +165,8 @@
 
       .home-hero-images img {
         width: 100%;
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 4 / 3;
+        min-height: clamp(180px, 20vw, 260px);
         object-fit: cover;
         border-radius: var(--radius-sm);
         border: 1px solid var(--line);
@@ -831,35 +832,28 @@
         margin: 18px 0 22px;
       }
 
-      .featured-gallery {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      .featured-gallery-panel {
-        padding: 20px;
-      }
-
-      .featured-gallery-grid {
+      .results-highlight-grid {
+        margin-top: 22px;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
       }
 
-      .featured-gallery-item {
+      .results-highlight-item {
+        margin: 0;
         overflow: hidden;
         border-radius: 18px;
         border: 1px solid var(--line);
         background: var(--panel-soft);
       }
 
-      .featured-gallery-item img {
+      .results-highlight-item img {
         width: 100%;
         aspect-ratio: 4 / 3;
         object-fit: cover;
       }
 
-      .featured-gallery-item figcaption {
+      .results-highlight-item figcaption {
         padding: 10px 12px;
         font-size: 0.9rem;
         color: #cbd5e1;
@@ -1112,16 +1106,12 @@
           gap: 8px;
         }
 
-        .featured-gallery-panel {
-          padding: 16px;
-        }
-
-        .featured-gallery-grid {
+        .results-highlight-grid {
           grid-template-columns: 1fr;
           gap: 12px;
         }
 
-        .featured-gallery-item img {
+        .results-highlight-item img {
           aspect-ratio: 16 / 10;
         }
 
@@ -1273,25 +1263,6 @@
               </div>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section class="container section featured-gallery" aria-label="Improvement highlights">
-        <div class="card featured-gallery-panel">
-          <div class="featured-gallery-grid">
-            <figure class="featured-gallery-item">
-              <img src="MBRT improvement.jpg" alt="MBRT improvement in milk quality process" />
-              <figcaption>MBRT improvement</figcaption>
-            </figure>
-            <figure class="featured-gallery-item">
-              <img src="milk packing film yield improvement.jpg" alt="Milk packing film yield improvement" />
-              <figcaption>Milk packing film yield improvement</figcaption>
-            </figure>
-            <figure class="featured-gallery-item">
-              <img src="pouch curd quality improvement.jpg" alt="Pouch curd quality improvement" />
-              <figcaption>Pouch curd quality improvement</figcaption>
-            </figure>
-          </div>
         </div>
       </section>
 
@@ -1657,6 +1628,20 @@
       <section class="container section" id="results">
         <p class="section-kicker">Key Achievements</p>
         <h2>Measured improvements delivered through practical implementation</h2>
+        <div class="results-highlight-grid" aria-label="Key achievement highlights">
+          <figure class="results-highlight-item">
+            <img src="MBRT improvement.jpg" alt="MBRT improvement in milk quality process" loading="lazy" decoding="async" />
+            <figcaption>MBRT improvement</figcaption>
+          </figure>
+          <figure class="results-highlight-item">
+            <img src="milk packing film yield improvement.jpg" alt="Milk packing film yield improvement" loading="lazy" decoding="async" />
+            <figcaption>Milk packing film yield improvement</figcaption>
+          </figure>
+          <figure class="results-highlight-item">
+            <img src="curd structure improvement.webp" alt="Curd structure improvement in fermented dairy products" loading="lazy" decoding="async" />
+            <figcaption>Curd structure improvement</figcaption>
+          </figure>
+        </div>
         <div class="results-grid">
           <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Ice Cream Plant Installation</h3><div class="achievement-result">1000 litre/day plant</div><p class="muted">Successful installation and commissioning of a 1000 LPD ice cream plant producing natural and regular ice creams including cones, cups, family packs, kulfi varieties, and special flavours.</p></article>
           <article class="achievement-card"><p class="eyebrow">Achievement</p><h3>Raw Milk MBRT Improvement</h3><div class="achievement-result">30 min → 150 min</div><p class="muted">Improved raw milk quality through procurement discipline, MBRT monitoring, and hygiene control at collection level.</p></article>
