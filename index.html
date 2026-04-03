@@ -122,8 +122,7 @@
         padding: 8px;
       }
 
-      .site-nav.show,
-      .navbar-expand-xl .site-nav {
+      .site-nav.show {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -1130,10 +1129,41 @@
       }
 
       @media (max-width: 1199.98px) {
+        .header-inner {
+          align-items: flex-start;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        .brand {
+          min-width: 0;
+          gap: 10px;
+        }
+
+        .brand > div {
+          min-width: 0;
+        }
+
+        .brand-kicker,
+        .brand-subtitle {
+          white-space: normal;
+          word-break: break-word;
+        }
+
         .site-nav.show {
           margin-top: 12px;
           justify-content: flex-start;
           width: 100%;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .site-nav.navbar-collapse {
+          display: flex !important;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 8px;
         }
       }
 
@@ -1183,14 +1213,14 @@
 
         .button-row {
           flex-direction: row;
-          flex-wrap: nowrap;
-          overflow-x: auto;
+          flex-wrap: wrap;
+          overflow-x: visible;
         }
 
         .hero-action-row {
           width: auto;
           flex-direction: row;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
         }
 
         .hero .button-row .btn {
