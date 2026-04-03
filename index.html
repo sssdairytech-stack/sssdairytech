@@ -411,9 +411,13 @@
 
       .hero-action-row {
         display: inline-flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 14px;
         margin-left: auto;
+      }
+
+      .button-row .btn {
+        white-space: nowrap;
       }
 
       .hero-gallery-block {
@@ -1199,16 +1203,21 @@
         }
 
         .button-row {
-          flex-direction: column;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          overflow-x: auto;
         }
 
         .hero-action-row {
-          width: 100%;
-          flex-direction: column;
+          width: auto;
+          flex-direction: row;
+          flex-wrap: nowrap;
         }
 
-        .btn {
-          width: 100%;
+        .hero .button-row .btn {
+          width: auto;
+          white-space: nowrap;
+          flex: 0 0 auto;
         }
 
         .contact-header,
@@ -1332,10 +1341,8 @@
 
             <div class="button-row">
               <a class="btn btn-secondary" href="#kra">View Department KRAs</a>
-              <div class="hero-action-row">
-                <a class="btn btn-primary" href="#contact">Request Consultation</a>
-                <a class="btn btn-ghost" href="#training">View Training Programs</a>
-              </div>
+              <a class="btn btn-primary" href="#contact">Request Consultation</a>
+              <a class="btn btn-ghost" href="#training">View Training Programs</a>
             </div>
 
           </div>
