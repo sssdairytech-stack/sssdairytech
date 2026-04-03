@@ -55,6 +55,18 @@
         max-width: 100%;
       }
 
+      img:not(.no-image-hover) {
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+
+      img:not(.no-image-hover):hover,
+      img:not(.no-image-hover):focus-visible,
+      img:not(.no-image-hover):active {
+        border-color: rgba(103, 232, 249, 0.9);
+        box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.35), 0 14px 30px rgba(2, 6, 23, 0.42);
+        transform: translateY(-2px);
+      }
+
       a {
         color: inherit;
         text-decoration: none;
@@ -942,6 +954,11 @@
         min-width: 0;
       }
 
+      .contact-card,
+      .contact-card-content span {
+        color: #e2e8f0;
+      }
+
       .consultant-photo {
         width: min(100%, 260px);
         border-radius: 24px;
@@ -1287,7 +1304,7 @@
     <header class="site-header">
       <div class="container header-inner navbar navbar-expand-xl navbar-dark p-0">
         <a class="brand" href="#home" aria-label="SSS DairyTech Consultants home">
-          <img src="sss dairytech logo.png" alt="SSS DairyTech Consultants logo" />
+          <img class="no-image-hover" src="sss dairytech logo.png" alt="SSS DairyTech Consultants logo" />
           <div>
             <p class="brand-kicker">SSS Dairy Tech</p>
             <p class="brand-subtitle">Consultants</p>
@@ -1350,7 +1367,7 @@
 
           <aside class="hero-aside card">
             <div class="hero-brand">
-              <img src="sss dairytech logo.png" alt="SSS DairyTech logo" />
+              <img class="no-image-hover" src="sss dairytech logo.png" alt="SSS DairyTech logo" />
               <div>
                 <h3>SSS DairyTech Consultants</h3>
                 <p class="muted">Strategic business advisors for dairy plants.</p>
@@ -1831,7 +1848,7 @@
       <section class="container section" id="contact">
         <div class="contact-wrap card">
           <div class="contact-header">
-            <img src="sss dairytech logo.png" alt="SSS DairyTech footer logo" />
+            <img class="no-image-hover" src="sss dairytech logo.png" alt="SSS DairyTech footer logo" />
             <div>
               <h2 style="margin-bottom: 6px;">SSS DairyTech Consultants</h2>
               <p class="section-intro" style="margin-bottom: 0;">Consulting across India and internationally.</p>
