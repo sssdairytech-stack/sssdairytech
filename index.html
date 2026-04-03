@@ -849,6 +849,33 @@
         text-transform: uppercase;
       }
 
+      .contact-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .contact-card-icon {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(34, 211, 238, 0.15);
+        color: #67e8f9;
+      }
+
+      .contact-card-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .contact-card-content {
+        min-width: 0;
+      }
+
       .consultant-photo {
         width: min(100%, 260px);
         border-radius: 24px;
@@ -1734,20 +1761,51 @@
           <div class="contact-layout">
             <div class="contact-grid">
               <a class="contact-card" href="tel:+919944427435">
-                <strong>Mobile</strong>
-                <span>+91-9944427435, +91-9443575974</span>
+                <span class="contact-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.62 2.65a2 2 0 0 1-.45 2.11L8 9.89a16 16 0 0 0 6.11 6.11l1.41-1.28a2 2 0 0 1 2.11-.45c.86.29 1.75.5 2.65.62A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </span>
+                <span class="contact-card-content">
+                  <strong>Mobile</strong>
+                  <span>+91-9944427435, +91-9443575974</span>
+                </span>
               </a>
               <a class="contact-card" href="mailto:sssdairytech@gmail.com">
-                <strong>Email</strong>
-                <span>sssdairytech@gmail.com</span>
+                <span class="contact-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path>
+                    <polyline points="22 7 12 13 2 7"></polyline>
+                  </svg>
+                </span>
+                <span class="contact-card-content">
+                  <strong>Email</strong>
+                  <span>sssdairytech@gmail.com</span>
+                </span>
               </a>
               <a class="contact-card" href="https://maps.google.com/?q=Sundaranivas%2C%2014%20Vallal%20Alagappar%20Street%2C%20Navarathina%20Nagar%2C%20Karaikudi%20630002%2C%20Tamilnadu%2C%20India">
-                <strong>Address</strong>
-                <span>Sundaranivas, 14 Vallal Alagappar Street, Navarathina Nagar, Karaikudi - 630 002, Tamilnadu, India</span>
+                <span class="contact-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <span class="contact-card-content">
+                  <strong>Address</strong>
+                  <span>Sundaranivas, 14 Vallal Alagappar Street, Navarathina Nagar, Karaikudi - 630 002, Tamilnadu, India</span>
+                </span>
               </a>
               <div class="contact-card">
-                <strong>Focus Areas</strong>
-                <span>Technical audit, process optimization, yield improvement, SOPs, training, quality systems, and new dairy project advisory.</span>
+                <span class="contact-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a7 7 0 0 0-7 7c0 3.18 2.14 5.87 5.06 6.7L10 22l4 0-.06-6.3A7 7 0 0 0 19 9a7 7 0 0 0-7-7z"></path>
+                    <circle cx="12" cy="9" r="2"></circle>
+                  </svg>
+                </span>
+                <span class="contact-card-content">
+                  <strong>Focus Areas</strong>
+                  <span>Technical audit, process optimization, yield improvement, SOPs, training, quality systems, and new dairy project advisory.</span>
+                </span>
               </div>
             </div>
 
