@@ -187,23 +187,23 @@
       }
 
       .home-hero-images {
-        margin-top: 6px;
+        margin: 10px auto 0;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        gap: 16px;
+        max-width: 980px;
+        justify-items: center;
       }
 
       .home-hero-images img {
         width: 100%;
-        aspect-ratio: 4 / 3;
-        min-height: clamp(160px, 16vw, 220px);
+        aspect-ratio: 16 / 10;
+        min-height: clamp(220px, 24vw, 360px);
         object-fit: cover;
+        object-position: center;
         border-radius: var(--radius-sm);
         border: 1px solid var(--line);
-      }
-
-      .home-hero-images .hero-image-wide {
-        grid-column: 1 / -1;
+        box-shadow: 0 14px 30px rgba(2, 6, 23, 0.34);
       }
 
       .pill {
@@ -1120,7 +1120,7 @@
 
         .home-hero-images {
           margin-top: 10px;
-          gap: 10px;
+          gap: 14px;
         }
 
         .nav {
@@ -1197,10 +1197,6 @@
         .home-hero-images {
           grid-template-columns: 1fr;
           gap: 8px;
-        }
-
-        .home-hero-images .hero-image-wide {
-          grid-column: auto;
         }
 
         .results-highlight-grid {
@@ -1356,9 +1352,8 @@
             </div>
 
             <div class="home-hero-images" aria-label="Home gallery">
-              <img class="hero-image-wide" src="hero 1.jpg" alt="Dairy processing setup overview" loading="lazy" decoding="async" />
+              <img src="hero 1.jpg" alt="Dairy processing setup overview" loading="lazy" decoding="async" />
               <img src="hero2.jpg" alt="Modern dairy processing line" loading="lazy" decoding="async" />
-              <img src="hero3" alt="Dairy operations and equipment view" loading="lazy" decoding="async" />
             </div>
           </aside>
         </div>
