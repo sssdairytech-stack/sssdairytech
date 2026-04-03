@@ -617,6 +617,41 @@
         align-items: flex-start;
       }
 
+      .kaizen-preview-card {
+        grid-column: 1 / -1;
+      }
+
+      .kaizen-preview-card h3 {
+        margin: 2px 0 8px;
+      }
+
+      .kaizen-preview-card p {
+        margin: 0 0 10px;
+      }
+
+      .kaizen-preview-images {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 12px 0 14px;
+      }
+
+      .kaizen-preview-images figure {
+        margin: 0;
+      }
+
+      .kaizen-preview-images img {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.28);
+      }
+
+      .kaizen-preview-images figcaption {
+        margin-top: 6px;
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
       .mini-index {
         flex: 0 0 36px;
         width: 36px;
@@ -1018,6 +1053,10 @@
           padding-right: 18px;
         }
 
+        .kaizen-preview-images {
+          grid-template-columns: 1fr;
+        }
+
         .audit-grid,
         .two-col-grid,
         .project-points,
@@ -1324,6 +1363,32 @@
               <article class="mini-card"><span class="mini-index">3</span><div>Interaction and discussion with department heads and key personnel.</div></article>
               <article class="mini-card"><span class="mini-index">4</span><div>Identification of deviations, operational gaps, and root causes.</div></article>
               <article class="mini-card"><span class="mini-index">5</span><div>Daily Gemba meetings to resolve issues and improve inter-department coordination.</div></article>
+              <article class="mini-card kaizen-preview-card">
+                <span class="mini-index">5A</span>
+                <div>
+                  <h3>Kaizen / Continuous Improvement</h3>
+                  <p class="muted">Small daily improvements that deliver measurable operational gains.</p>
+                  <p class="muted">Kaizen is a practical system of continuous improvement built on small, regular actions taken by plant teams every day. In dairy plants, it helps identify losses, solve recurring shop-floor problems, improve quality consistency, strengthen discipline, reduce waste, and create sustainable gains in productivity, yield, hygiene, and cost control.</p>
+                  <ul class="plain-list muted">
+                    <li>Daily identification of operational losses and recurring issues.</li>
+                    <li>Small practical improvements led by plant teams.</li>
+                    <li>Better inter-department coordination through review meetings.</li>
+                    <li>Reduction in waste, rework, downtime, and avoidable process variation.</li>
+                    <li>Stronger quality discipline, accountability, and follow-up action.</li>
+                  </ul>
+                  <div class="kaizen-preview-images" aria-label="Kaizen visual preview">
+                    <figure>
+                      <img src="images/kaizen-shopfloor-discussion.webp" alt="Kaizen shop-floor discussion with dairy plant team" loading="lazy" decoding="async" />
+                      <figcaption>Shop-floor Kaizen Discussion</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="images/pdca-cycle-diagram.webp" alt="PDCA cycle diagram used for continuous improvement" loading="lazy" decoding="async" />
+                      <figcaption>PDCA Cycle Diagram</figcaption>
+                    </figure>
+                  </div>
+                  <p><a class="btn" href="#contact">Discuss Continuous Improvement Support</a></p>
+                </div>
+              </article>
               <article class="mini-card"><span class="mini-index">6</span><div>Preparation of action plans with responsibilities and timelines.</div></article>
               <article class="mini-card"><span class="mini-index">7</span><div>Follow-up review of corrective actions and performance improvement.</div></article>
             </div>
