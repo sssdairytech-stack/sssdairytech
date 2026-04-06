@@ -1,0 +1,2 @@
+# Permanent redirect for legacy About Us URL to Consultant section.
+Redirect 301 /about-us.html /index.html#consultant
