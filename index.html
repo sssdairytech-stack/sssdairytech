@@ -684,6 +684,19 @@
         font-weight: 600;
       }
 
+      .success-banner {
+        margin: 0 0 30px;
+        padding: 14px 20px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #0b7a75, #123c3a);
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
       .case-learning-card {
         display: flex;
         flex-direction: column;
@@ -1874,6 +1887,12 @@
         .service-image-wrap img {
           max-height: 200px;
         }
+
+        .success-banner {
+          padding: 12px 14px;
+          font-size: 0.94rem;
+          letter-spacing: 0.2px;
+        }
       }
     </style>
   </head>
@@ -1895,17 +1914,10 @@
 
         <nav class="site-nav collapse navbar-collapse" id="mainNav" aria-label="Primary">
           <a href="#home">Home</a>
-          <a href="#why-choose-us">Why Choose Us</a>
-          <a href="#case-studies">Case Studies</a>
-          <a href="#consultant">Consultant</a>
-          <a href="#audit">Tech Audit</a>
-          <a href="#methodology">Methodology</a>
-          <a href="#kra">KRA</a>
+          <a href="#consultant">About Us</a>
           <a href="#services">Services</a>
-          <a href="#results">Results</a>
-          <a href="#clients">Clients</a>
+          <a href="#success-stories">Success Stories</a>
           <a href="#training">Training</a>
-          <a href="#project">Project</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -2313,18 +2325,22 @@
         </div>
       </section>
 
-      <section class="container section case-studies" id="case-studies">
+      <section class="container section case-studies success-stories" id="success-stories">
         <div class="case-header">
           <div>
-            <p class="section-kicker">Success Stories / Case Studies</p>
-            <h2>Practical Dairy Solutions. Measurable Results.</h2>
+            <p class="section-kicker">Success Stories</p>
+            <h2>Success Stories from the Dairy Field</h2>
             <p class="section-intro">
-              Selected field-based dairy improvement stories from SSS DairyTech. Detailed findings,
-              root-cause analysis, correction methods and SOPs are shared only during consultancy discussions.
+              Real-world dairy challenges solved through practical engineering,
+              quality systems, process optimization and operational improvement.
             </p>
           </div>
 
         </div>
+
+        <p class="success-banner">
+          Detailed findings, root-cause analysis, correction methods and SOPs are shared only during consultancy discussions.
+        </p>
 
         <div class="case-grid">
           <article class="case-card">
@@ -2730,10 +2746,10 @@
           caption: "Over four decades of hands-on dairy industry experience delivering practical solutions."
         },
         {
-          section: "Case Studies",
-          target: "case-studies",
+          section: "Success Stories",
+          target: "success-stories",
           icon: "trending-up",
-          caption: "Selected dairy plant improvement stories covering utilities, quality, process, and projects."
+          caption: "Real-world dairy challenges solved through engineering, quality systems, process optimization, and operational improvement."
         },
         {
           section: "Consultant",
