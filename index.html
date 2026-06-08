@@ -538,6 +538,237 @@
         line-height: 1.7;
       }
 
+      .case-studies {
+        overflow: hidden;
+        border: 1px solid rgba(34, 211, 238, 0.2);
+        border-radius: var(--radius-lg);
+        background:
+          linear-gradient(135deg, rgba(34, 211, 238, 0.12), transparent 34%),
+          linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.94));
+        box-shadow: var(--shadow);
+      }
+
+      .case-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+        gap: clamp(24px, 4vw, 48px);
+        align-items: end;
+        padding-bottom: clamp(24px, 4vw, 34px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+      }
+
+      .case-header h2 {
+        max-width: 820px;
+        color: #f8fafc;
+      }
+
+      .case-header .section-intro {
+        max-width: 760px;
+        margin-bottom: 0;
+        line-height: 1.75;
+      }
+
+      .case-metrics {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .case-metric,
+      .case-feature-card,
+      .case-learning-card,
+      .case-card,
+      .case-cta {
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.055), transparent 38%),
+          rgba(15, 23, 42, 0.74);
+        box-shadow: 0 16px 42px rgba(2, 6, 23, 0.24);
+      }
+
+      .case-metric {
+        min-height: 112px;
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(2, 6, 23, 0.44);
+      }
+
+      .case-metric strong {
+        display: block;
+        margin-bottom: 6px;
+        color: #ecfeff;
+        font-size: clamp(1.2rem, 2vw, 1.55rem);
+        line-height: 1.15;
+      }
+
+      .case-metric span {
+        display: block;
+        color: #9fb4c7;
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+
+      .case-feature {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: clamp(18px, 3vw, 28px);
+        margin-top: clamp(22px, 4vw, 34px);
+      }
+
+      .case-feature-card,
+      .case-learning-card,
+      .case-card,
+      .case-cta {
+        border-radius: 22px;
+      }
+
+      .case-feature-card,
+      .case-learning-card {
+        padding: clamp(22px, 4vw, 32px);
+      }
+
+      .case-feature-label,
+      .case-card-label {
+        display: block;
+        color: #a5f3fc;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .case-feature-label {
+        margin: 0 0 14px;
+      }
+
+      .case-feature-card h3 {
+        color: #ffffff;
+        font-size: clamp(1.5rem, 3vw, 2.1rem);
+        line-height: 1.18;
+      }
+
+      .case-feature-card p,
+      .case-learning-card p,
+      .case-card p,
+      .case-cta p {
+        color: #cbd5e1;
+        line-height: 1.72;
+      }
+
+      .case-detail-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .case-detail-item {
+        padding: 16px;
+        border: 1px solid rgba(34, 211, 238, 0.16);
+        border-radius: 16px;
+        background: rgba(2, 6, 23, 0.34);
+      }
+
+      .case-detail-item p,
+      .case-card p {
+        margin-bottom: 0;
+      }
+
+      .case-learning-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 22px;
+        background:
+          linear-gradient(135deg, rgba(52, 211, 153, 0.14), rgba(34, 211, 238, 0.08)),
+          rgba(2, 6, 23, 0.56);
+      }
+
+      .case-learning-card h3,
+      .case-card h3,
+      .case-cta h3 {
+        color: #f8fafc;
+      }
+
+      .case-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 22px;
+      }
+
+      .case-card {
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        gap: 14px;
+        padding: 22px;
+        transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      }
+
+      .case-card:hover,
+      .case-card:focus-within {
+        border-color: rgba(34, 211, 238, 0.42);
+        background-color: rgba(15, 23, 42, 0.9);
+        transform: translateY(-3px);
+      }
+
+      .case-card h3 {
+        margin-bottom: 0;
+        font-size: 1.12rem;
+        line-height: 1.3;
+      }
+
+      .case-card-label {
+        margin-bottom: 4px;
+      }
+
+      .case-link {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        margin-top: auto;
+        color: #67e8f9;
+        font-weight: 800;
+      }
+
+      .case-link:hover,
+      .case-link:focus-visible {
+        color: #ffffff;
+      }
+
+      .case-cta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 20px;
+        align-items: center;
+        margin-top: 22px;
+        padding: clamp(22px, 4vw, 30px);
+        background:
+          linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(52, 211, 153, 0.1)),
+          rgba(2, 6, 23, 0.52);
+      }
+
+      .case-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 13px 18px;
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-green));
+        color: #082f49;
+        font-weight: 800;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .case-button:hover,
+      .case-button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 28px rgba(8, 47, 73, 0.34);
+      }
+
 
       .bullet-list,
       .service-list,
@@ -1429,7 +1660,10 @@
         .services-grid,
         .results-grid,
         .clients-grid,
-        .contact-layout {
+        .contact-layout,
+        .case-header,
+        .case-feature,
+        .case-cta {
           grid-template-columns: 1fr;
         }
 
@@ -1443,7 +1677,8 @@
         }
 
         .audit-image-grid,
-        .why-grid {
+        .why-grid,
+        .case-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -1534,8 +1769,14 @@
         .project-points,
         .contact-grid,
         .stat-grid,
-        .why-grid {
+        .why-grid,
+        .case-metrics,
+        .case-grid {
           grid-template-columns: 1fr;
+        }
+
+        .case-button {
+          width: 100%;
         }
 
         h1 {
@@ -1644,6 +1885,7 @@
         <nav class="site-nav collapse navbar-collapse" id="mainNav" aria-label="Primary">
           <a href="#home">Home</a>
           <a href="#why-choose-us">Why Choose Us</a>
+          <a href="#case-studies">Case Studies</a>
           <a href="#consultant">Consultant</a>
           <a href="#audit">Tech Audit</a>
           <a href="#methodology">Methodology</a>
@@ -2060,6 +2302,144 @@
         </div>
       </section>
 
+      <section class="container section case-studies" id="case-studies">
+        <div class="case-header">
+          <div>
+            <p class="section-kicker">Case Studies</p>
+            <h2>Practical dairy solutions with measurable plant-level results.</h2>
+            <p class="section-intro">
+              Selected field-based improvement stories from SSS DairyTech. Detailed findings,
+              root-cause analysis, and corrective action plans are shared during consultancy discussions.
+            </p>
+          </div>
+
+          <div class="case-metrics" aria-label="Case study focus areas">
+            <div class="case-metric">
+              <strong>Utilities</strong>
+              <span>Power, refrigeration, steam, water, and operating cost studies.</span>
+            </div>
+            <div class="case-metric">
+              <strong>Quality</strong>
+              <span>Milk quality, microbial control, hygiene, and product consistency.</span>
+            </div>
+            <div class="case-metric">
+              <strong>Process</strong>
+              <span>Yield improvement, SOP discipline, line studies, and troubleshooting.</span>
+            </div>
+            <div class="case-metric">
+              <strong>Projects</strong>
+              <span>Expansion planning, equipment selection, commissioning, and stabilization.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-feature">
+          <article class="case-feature-card">
+            <p class="case-feature-label">Featured Case Study</p>
+            <h3>Refrigeration Power Saving Project</h3>
+            <p>
+              A dairy plant was experiencing higher-than-expected electricity consumption in its
+              refrigeration system despite operating below installed production capacity.
+            </p>
+
+            <div class="case-detail-list">
+              <div class="case-detail-item">
+                <span class="case-feature-label">Challenge</span>
+                <p>Refrigeration equipment was running significantly longer than theoretical requirements.</p>
+              </div>
+              <div class="case-detail-item">
+                <span class="case-feature-label">What Was Observed</span>
+                <p>
+                  Cooling loads did not match actual operating conditions, and hidden utility losses
+                  were not visible through routine monitoring.
+                </p>
+              </div>
+              <div class="case-detail-item">
+                <span class="case-feature-label">Result Achieved</span>
+                <p>
+                  Energy-saving opportunities were identified through load analysis,
+                  operating-hour study, and utility monitoring.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <aside class="case-learning-card">
+            <div>
+              <h3>Business Impact</h3>
+              <p>
+                Lower utility costs, improved equipment utilization, better visibility of refrigeration
+                performance, and a structured approach for sustained reduction in electricity consumption.
+              </p>
+            </div>
+            <div>
+              <h3>Key Learning</h3>
+              <p>
+                Many dairies focus on production efficiency while overlooking utility efficiency.
+                A systematic analysis of refrigeration load versus actual operating hours can reveal
+                savings without major capital investment.
+              </p>
+            </div>
+            <a href="#contact" class="case-button">Evaluate power-saving potential</a>
+          </aside>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <h3>Raw Milk Quality Improvement</h3>
+            <p><span class="case-card-label">Challenge</span>Low MBRT values, poor incoming milk quality, and recurring finished product complaints.</p>
+            <p><span class="case-card-label">Result Achieved</span>Improved milk handling discipline, better hygiene practices, and stronger quality performance.</p>
+            <a href="#contact" class="case-link">Discuss a similar issue &rarr;</a>
+          </article>
+
+          <article class="case-card">
+            <h3>CIP &amp; Hygiene Improvement</h3>
+            <p><span class="case-card-label">Challenge</span>Recurring microbial issues even after regular CIP operations.</p>
+            <p><span class="case-card-label">Result Achieved</span>Improved cleaning consistency, stronger hygiene control, and reduced contamination risk.</p>
+            <a href="#contact" class="case-link">Request CIP assessment &rarr;</a>
+          </article>
+
+          <article class="case-card">
+            <h3>Ghee Flavour &amp; Grain Improvement</h3>
+            <p><span class="case-card-label">Challenge</span>Variation in ghee flavour, aroma, grain formation, and batch consistency.</p>
+            <p><span class="case-card-label">Result Achieved</span>Improved flavour profile, better grain appearance, and stronger product consistency.</p>
+            <a href="#contact" class="case-link">Improve ghee quality &rarr;</a>
+          </article>
+
+          <article class="case-card">
+            <h3>Curd Process Stabilization</h3>
+            <p><span class="case-card-label">Challenge</span>Inconsistent curd texture, body, appearance, and customer acceptance.</p>
+            <p><span class="case-card-label">Result Achieved</span>Better process control, improved consistency, and reduced quality complaints.</p>
+            <a href="#contact" class="case-link">Stabilize curd quality &rarr;</a>
+          </article>
+
+          <article class="case-card">
+            <h3>Dairy Plant Expansion &amp; Commissioning Support</h3>
+            <p><span class="case-card-label">Challenge</span>Need for practical guidance during expansion, equipment selection, and commissioning.</p>
+            <p><span class="case-card-label">Result Achieved</span>Improved project clarity, better process planning, and smoother plant stabilization.</p>
+            <a href="#contact" class="case-link">Plan your dairy project &rarr;</a>
+          </article>
+
+          <article class="case-card">
+            <h3>Utility &amp; Cost Reduction Reviews</h3>
+            <p><span class="case-card-label">Challenge</span>Hidden losses in steam, refrigeration, water, power, CIP chemicals, and operating routines.</p>
+            <p><span class="case-card-label">Result Achieved</span>Clearer performance visibility and practical actions for continuous cost reduction.</p>
+            <a href="#contact" class="case-link">Review plant utilities &rarr;</a>
+          </article>
+        </div>
+
+        <div class="case-cta">
+          <div>
+            <h3>Every dairy has improvement opportunities hidden in plain sight.</h3>
+            <p>
+              Contact SSS DairyTech to identify quality, hygiene, utility, process,
+              and cost-saving opportunities in your dairy plant.
+            </p>
+          </div>
+          <a href="#contact" class="case-button">Contact SSS DairyTech</a>
+        </div>
+      </section>
+
       <section class="container section" id="services">
         <p class="section-kicker">Services</p>
         <h2>Professional consulting and technical auditing for dairy plants</h2>
@@ -2400,6 +2780,12 @@
           target: "why-choose-us",
           icon: "badge-check",
           caption: "Over four decades of hands-on dairy industry experience delivering practical solutions."
+        },
+        {
+          section: "Case Studies",
+          target: "case-studies",
+          icon: "trending-up",
+          caption: "Selected dairy plant improvement stories covering utilities, quality, process, and projects."
         },
         {
           section: "Consultant",
