@@ -550,7 +550,7 @@
 
       .case-header {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+        grid-template-columns: 1fr;
         gap: clamp(24px, 4vw, 48px);
         align-items: end;
         padding-bottom: clamp(24px, 4vw, 34px);
@@ -671,6 +671,17 @@
       .case-detail-item p,
       .case-card p {
         margin-bottom: 0;
+      }
+
+      .hidden-note {
+        margin-top: 2px;
+        padding: 10px 12px;
+        border-left: 4px solid #0b7a75;
+        border-radius: 8px;
+        background: #eef8f6;
+        color: #123c3a !important;
+        font-size: 14.5px !important;
+        font-weight: 600;
       }
 
       .case-learning-card {
@@ -2305,90 +2316,30 @@
       <section class="container section case-studies" id="case-studies">
         <div class="case-header">
           <div>
-            <p class="section-kicker">Case Studies</p>
-            <h2>Practical dairy solutions with measurable plant-level results.</h2>
+            <p class="section-kicker">Success Stories / Case Studies</p>
+            <h2>Practical Dairy Solutions. Measurable Results.</h2>
             <p class="section-intro">
-              Selected field-based improvement stories from SSS DairyTech. Detailed findings,
-              root-cause analysis, and corrective action plans are shared during consultancy discussions.
+              Selected field-based dairy improvement stories from SSS DairyTech. Detailed findings,
+              root-cause analysis, correction methods and SOPs are shared only during consultancy discussions.
             </p>
           </div>
 
-          <div class="case-metrics" aria-label="Case study focus areas">
-            <div class="case-metric">
-              <strong>Utilities</strong>
-              <span>Power, refrigeration, steam, water, and operating cost studies.</span>
-            </div>
-            <div class="case-metric">
-              <strong>Quality</strong>
-              <span>Milk quality, microbial control, hygiene, and product consistency.</span>
-            </div>
-            <div class="case-metric">
-              <strong>Process</strong>
-              <span>Yield improvement, SOP discipline, line studies, and troubleshooting.</span>
-            </div>
-            <div class="case-metric">
-              <strong>Projects</strong>
-              <span>Expansion planning, equipment selection, commissioning, and stabilization.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="case-feature">
-          <article class="case-feature-card">
-            <p class="case-feature-label">Featured Case Study</p>
-            <h3>Refrigeration Power Saving Project</h3>
-            <p>
-              A dairy plant was experiencing higher-than-expected electricity consumption in its
-              refrigeration system despite operating below installed production capacity.
-            </p>
-
-            <div class="case-detail-list">
-              <div class="case-detail-item">
-                <span class="case-feature-label">Challenge</span>
-                <p>Refrigeration equipment was running significantly longer than theoretical requirements.</p>
-              </div>
-              <div class="case-detail-item">
-                <span class="case-feature-label">What Was Observed</span>
-                <p>
-                  Cooling loads did not match actual operating conditions, and hidden utility losses
-                  were not visible through routine monitoring.
-                </p>
-              </div>
-              <div class="case-detail-item">
-                <span class="case-feature-label">Result Achieved</span>
-                <p>
-                  Energy-saving opportunities were identified through load analysis,
-                  operating-hour study, and utility monitoring.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <aside class="case-learning-card">
-            <div>
-              <h3>Business Impact</h3>
-              <p>
-                Lower utility costs, improved equipment utilization, better visibility of refrigeration
-                performance, and a structured approach for sustained reduction in electricity consumption.
-              </p>
-            </div>
-            <div>
-              <h3>Key Learning</h3>
-              <p>
-                Many dairies focus on production efficiency while overlooking utility efficiency.
-                A systematic analysis of refrigeration load versus actual operating hours can reveal
-                savings without major capital investment.
-              </p>
-            </div>
-            <a href="#contact" class="case-button">Evaluate power-saving potential</a>
-          </aside>
         </div>
 
         <div class="case-grid">
           <article class="case-card">
+            <h3>Refrigeration Power Saving Project</h3>
+            <p><span class="case-card-label">Challenge</span>High electricity consumption in the refrigeration system despite lower production load.</p>
+            <p><span class="case-card-label">Result Achieved</span>Energy-saving opportunities identified through load analysis, operating hour study and utility monitoring.</p>
+            <p class="hidden-note">Detailed correction method shared during consultancy discussion.</p>
+            <a href="#contact" class="case-link">Know how this was solved &rarr;</a>
+          </article>
+
+          <article class="case-card">
             <h3>Raw Milk Quality Improvement</h3>
             <p><span class="case-card-label">Challenge</span>Low MBRT values, poor incoming milk quality, and recurring finished product complaints.</p>
-            <p><span class="case-card-label">Result Achieved</span>Improved milk handling discipline, better hygiene practices, and stronger quality performance.</p>
+            <p><span class="case-card-label">Result Achieved</span>Improved milk handling discipline, better hygiene practices and significant improvement in quality performance.</p>
+            <p class="hidden-note">Detailed findings shared during consultancy discussion.</p>
             <a href="#contact" class="case-link">Discuss a similar issue &rarr;</a>
           </article>
 
@@ -2396,6 +2347,7 @@
             <h3>CIP &amp; Hygiene Improvement</h3>
             <p><span class="case-card-label">Challenge</span>Recurring microbial issues even after regular CIP operations.</p>
             <p><span class="case-card-label">Result Achieved</span>Improved cleaning consistency, stronger hygiene control, and reduced contamination risk.</p>
+            <p class="hidden-note">Root-cause analysis shared only during consultancy discussion.</p>
             <a href="#contact" class="case-link">Request CIP assessment &rarr;</a>
           </article>
 
@@ -2403,6 +2355,7 @@
             <h3>Ghee Flavour &amp; Grain Improvement</h3>
             <p><span class="case-card-label">Challenge</span>Variation in ghee flavour, aroma, grain formation, and batch consistency.</p>
             <p><span class="case-card-label">Result Achieved</span>Improved flavour profile, better grain appearance, and stronger product consistency.</p>
+            <p class="hidden-note">Process corrections shared during consultancy discussion.</p>
             <a href="#contact" class="case-link">Improve ghee quality &rarr;</a>
           </article>
 
@@ -2410,21 +2363,16 @@
             <h3>Curd Process Stabilization</h3>
             <p><span class="case-card-label">Challenge</span>Inconsistent curd texture, body, appearance, and customer acceptance.</p>
             <p><span class="case-card-label">Result Achieved</span>Better process control, improved consistency, and reduced quality complaints.</p>
+            <p class="hidden-note">Complete stabilization method shared during consultancy discussion.</p>
             <a href="#contact" class="case-link">Stabilize curd quality &rarr;</a>
           </article>
 
           <article class="case-card">
-            <h3>Dairy Plant Expansion &amp; Commissioning Support</h3>
-            <p><span class="case-card-label">Challenge</span>Need for practical guidance during expansion, equipment selection, and commissioning.</p>
-            <p><span class="case-card-label">Result Achieved</span>Improved project clarity, better process planning, and smoother plant stabilization.</p>
-            <a href="#contact" class="case-link">Plan your dairy project &rarr;</a>
-          </article>
-
-          <article class="case-card">
-            <h3>Utility &amp; Cost Reduction Reviews</h3>
-            <p><span class="case-card-label">Challenge</span>Hidden losses in steam, refrigeration, water, power, CIP chemicals, and operating routines.</p>
-            <p><span class="case-card-label">Result Achieved</span>Clearer performance visibility and practical actions for continuous cost reduction.</p>
-            <a href="#contact" class="case-link">Review plant utilities &rarr;</a>
+            <h3>Milk Packing Film Yield Improvement</h3>
+            <p><span class="case-card-label">Challenge</span>Excess packing film consumption, variation in pouch yield, and avoidable packing losses.</p>
+            <p><span class="case-card-label">Result Achieved</span>Improved packing control, reduced wastage, and better yield monitoring.</p>
+            <p class="hidden-note">Audit method and correction plan shared during consultancy discussion.</p>
+            <a href="#contact" class="case-link">Improve packing yield &rarr;</a>
           </article>
         </div>
 
