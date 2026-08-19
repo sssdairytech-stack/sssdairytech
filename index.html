@@ -1757,6 +1757,75 @@
         font-weight: 700;
       }
 
+      .client-testimonial {
+        display: grid;
+        grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.55fr);
+        gap: clamp(24px, 4vw, 46px);
+        align-items: center;
+        margin-top: 24px;
+        padding: clamp(20px, 3vw, 34px);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        background:
+          linear-gradient(145deg, rgba(34, 211, 238, 0.08), transparent 38%),
+          var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .client-testimonial-preview {
+        display: block;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.96);
+      }
+
+      .client-testimonial-preview img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 595.2 / 841.68;
+        object-fit: contain;
+        border-radius: 9px;
+      }
+
+      .client-testimonial h3 {
+        margin: 8px 0 16px;
+        font-size: clamp(1.45rem, 2.6vw, 2rem);
+      }
+
+      .testimonial-quote {
+        margin: 0 0 18px;
+        padding: 4px 0 4px 18px;
+        border-left: 4px solid var(--accent);
+        color: #e6fbff;
+        font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+        line-height: 1.7;
+      }
+
+      .testimonial-departments {
+        margin: 14px 0;
+        color: #d1fae5;
+      }
+
+      .testimonial-attribution {
+        margin: 18px 0 0;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .client-testimonial .button-row {
+        margin-top: 20px;
+        margin-left: 0;
+      }
+
+      .client-testimonial .btn:focus-visible,
+      .client-testimonial-preview:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
       .spaced > * + * {
         margin-top: 14px;
       }
@@ -1947,6 +2016,21 @@
         .results-highlight-grid {
           grid-template-columns: 1fr;
           gap: 12px;
+        }
+
+        .client-testimonial {
+          grid-template-columns: 1fr;
+          padding: 18px;
+        }
+
+        .client-testimonial-preview {
+          width: min(100%, 430px);
+          margin: 0 auto;
+        }
+
+        .client-testimonial .button-row,
+        .client-testimonial .btn {
+          width: 100%;
         }
 
         .results-highlight-item img {
@@ -2357,6 +2441,53 @@
             </figure>
           </div>
         </div>
+
+        <article class="client-testimonial" id="dodla-testimonial" aria-labelledby="dodla-testimonial-heading">
+          <a
+            class="client-testimonial-preview"
+            href="dodla-dairy-cip-training-testimonial-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View signed Dodla Dairy testimonial PDF in a new tab"
+          >
+            <img
+              src="dodla-dairy-cip-training-testimonial-2026.webp"
+              alt="Signed Dodla Dairy testimonial for SSS DairyTech corporate CIP and dairy hygiene training"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <div>
+            <p class="section-kicker">Client Testimonial</p>
+            <h3 id="dodla-testimonial-heading">Corporate CIP &amp; Dairy Hygiene Training – Dodla Dairy Limited</h3>
+            <blockquote class="testimonial-quote">
+              “The programme was highly interactive, practical and informative, providing valuable insights into
+              day-to-day quality, hygiene and food safety challenges encountered in dairy operations.”
+            </blockquote>
+            <p class="muted">
+              SSS DairyTech Consultants conducted a one-day online corporate technical training programme on
+              “Quality Assurance, Cleaning-in-Place (CIP) &amp; Dairy Hygiene Management” for 69 employees of
+              Dodla Dairy Limited on 31 July 2026.
+            </p>
+            <p class="testimonial-departments"><strong>Participant departments:</strong> Quality Assurance, Production and Microbiology</p>
+            <p class="testimonial-attribution">
+              <strong>R. Mohan Kumar</strong><br />
+              Head – Quality Assurance<br />
+              Dodla Dairy Limited<br />
+              Testimonial dated 14 August 2026
+            </p>
+            <div class="button-row">
+              <a
+                class="btn btn-primary"
+                href="dodla-dairy-cip-training-testimonial-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View signed Dodla Dairy testimonial PDF in a new tab"
+              >View Signed Testimonial</a>
+              <a class="btn btn-secondary" href="#contact">Enquire About Corporate Training</a>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section id="why-choose-us" class="why-choose-us">
@@ -2671,7 +2802,7 @@
         <p class="section-intro">SSS DairyTech Consultants has supported dairy plants across India and internationally in areas such as plant operations improvement, MBRT improvement, product quality enhancement, process optimisation, and dairy plant project advisory.</p>
         <div class="clients-grid">
           <article class="client-card"><h3>Major Dairy Clients</h3><ul class="plain-list muted"><li>VKA Milk – Karur</li><li>Sri Mahalalakshmi Dairy – Aroma Milk, Coimbatore</li><li>Winner Dairy – Rusi Milk, Pondicherry</li><li>White field dairy- Amrut milk Pollachi</li><li>Ruby Milk – Madurai</li><li>SMD Milk – Erode</li><li>Jallikattu Milk – RKR Dairy Products</li><li>SNP Milk – Madurai</li><li>Elanadu Food Products (p) Ltd, Trissur, Kerala - Elanadu milk</li></ul></article>
-          <article class="client-card"><h3>Online Technical Support</h3><ul class="plain-list muted"><li>Sandeep Paneer – Mysore</li><li>Mastany Lassi – Khandwa, Madhya Pradesh</li><li>Fish Tail Dairy – Pokhara, Nepal</li><li>Alvas Dairy – Singapore</li><li>Velan Foods – Madurai</li><li>Dodla Dairy – Conducted an online corporate technical training programme on CIP and Dairy Hygiene Management for 69 Quality Assurance and plant personnel.</li></ul></article>
+          <article class="client-card"><h3>Online Technical Support</h3><ul class="plain-list muted"><li>Sandeep Paneer – Mysore</li><li>Mastany Lassi – Khandwa, Madhya Pradesh</li><li>Fish Tail Dairy – Pokhara, Nepal</li><li>Alvas Dairy – Singapore</li><li>Velan Foods – Madurai</li><li>Dodla Dairy Limited – One-day online corporate training on Quality Assurance, CIP and Dairy Hygiene Management for 69 employees from Quality Assurance, Production and Microbiology.</li></ul></article>
           <article class="client-card"><h3>New Dairy Projects</h3><ul class="plain-list muted"><li>VKA Dairy Karur – 300,000 LPD fully automated multi-product dairy plant</li></ul></article>
         </div>
       </section>
@@ -3033,6 +3164,18 @@
         element.classList.add("reveal-on-scroll");
         element.style.transitionDelay = `${Math.min(index % 6, 5) * 45}ms`;
       });
+
+      const hashTarget = window.location.hash
+        ? document.getElementById(decodeURIComponent(window.location.hash.slice(1)))
+        : null;
+
+      if (hashTarget) {
+        let currentElement = hashTarget;
+        while (currentElement) {
+          currentElement.classList?.add("is-visible");
+          currentElement = currentElement.parentElement;
+        }
+      }
 
       const revealObserver = "IntersectionObserver" in window
         ? new IntersectionObserver((entries) => {
